@@ -16,12 +16,13 @@
       }
   
       .imagen {
-        width: 100px; // Anchura fija para las imágenes
-        height: 100px; // Altura fija para las imágenes
+        width: 70%; // Anchura fija para las imágenes
+        height: 70%; // Altura fija para las imágenes
         overflow: hidden; // Ocultar partes sobrantes si la imagen no es cuadrada
         display: flex;
         justify-content: center;
         align-items: center;
+        border-radius: 5%;
   
         img {
           width: 100%; // Ajustar al ancho del contenedor
