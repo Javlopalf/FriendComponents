@@ -1,0 +1,10 @@
+$color-principal: #2F1893;
+$color-secundario:#FFFFFF;
+
+footer{
+    background-color: $color-principal;
+    color: $color-secundario;
+}
+a{
+    color: $color-secundario !important;
+}
