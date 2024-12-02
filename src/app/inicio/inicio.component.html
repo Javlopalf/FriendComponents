@@ -1,1 +1,8 @@
-<p>inicio works!</p>
+<div class="categorias-container">
+    <div *ngFor="let categoria of categorias" class="categoria">
+        <div class="imagen">
+            <img [src]="categoria.imagen" [alt]="categoria.nombre" class="categoria-imagen" />
+        </div>
+        <p class="categoria-nombre">{{ categoria.nombre }}</p>
+    </div>
+</div>
