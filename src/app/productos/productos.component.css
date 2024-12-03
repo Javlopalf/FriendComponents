@@ -1,7 +1,8 @@
 /* Contenedor principal */
 .container {
   display: grid;
-  grid-template-columns: 300px 1fr; /* Sidebar y contenido principal */
+  grid-template-columns: 300px 1fr;
+  /* Sidebar y contenido principal */
   gap: 20px;
   padding: 20px;
   font-family: 'Arial', sans-serif;
@@ -93,11 +94,11 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
+}
 
-  &:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
-  }
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
 }
 
 .product-card img {
@@ -161,24 +162,24 @@
   background-color: #4b0082;
   color: #fff;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-  &:hover {
-    background-color: #370074;
-    transform: scale(1.05);
-    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.15);
-  }
+.btn.purchase:hover {
+  background-color: #370074;
+  transform: scale(1.05);
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.15);
 }
 
 .btn.add-to-bag {
   background-color: #ddd;
   color: #333;
   border: 1px solid #ccc;
+}
 
-  &:hover {
-    background-color: #bbb;
-    transform: scale(1.05);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
+.btn.add-to-bag:hover {
+  background-color: #bbb;
+  transform: scale(1.05);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Efectos y animaciones */
@@ -191,11 +192,14 @@
 }
 
 @keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .product-card {
   animation: fadeIn 0.6s ease-out;
 }
-

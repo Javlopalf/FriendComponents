@@ -1,1 +1,33 @@
-<p>productos works!</p>
+<div class="container">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h2>Categorías</h2>
+    <ul class="category-list">
+      <li *ngFor="let categoria of data">
+        <a (click)="cambiarCategoria(categoria.nombre)">{{ categoria.nombre }}</a>
+      </li>
+    </ul>
+  </aside>
+
+  <!-- Sección de productos -->
+  <section class="products">
+    <h1>{{ categoriaSeleccionada }}</h1>
+    <div *ngFor="let categoria of data">
+      <div *ngIf="categoria.nombre === categoriaSeleccionada">
+        <div *ngFor="let producto of categoria.productos" class="product-card">
+          <img [src]="producto.imagen" alt="{{ producto.nombre }}">
+          <div class="product-info">
+            <h3>{{ producto.nombre }}</h3>
+            <p>{{ producto.descripcion }}</p>
+            <div class="price-rating">
+              <span class="price">{{ producto.precio | currency:'EUR' }}</span>
+              <span class="rating">{{ producto.valoracion }}</span>
+            </div>
+            <button class="btn purchase">Purchase</button>
+            <button class="btn add-to-bag">Add to Bag</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
