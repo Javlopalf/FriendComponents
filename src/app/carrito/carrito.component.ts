@@ -1,38 +1,41 @@
-// src/app/carrito/carrito.component.ts
-import { Component, OnInit } from '@angular/core';
-import { CarritoService } from '../carritoService/carrito.service';  // Asegúrate de importar el servicio
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-carrito',
   templateUrl: './carrito.component.html',
   styleUrls: ['./carrito.component.css']
 })
-export class CarritoComponent implements OnInit {
-  carrito: any[] = [];
+export class CarritoComponent {
+  carrito: { nombre: string, precio: number, cantidad: number }[] = [
+    { nombre: 'Producto 1', precio: 10, cantidad: 2 },
+    { nombre: 'Producto 2', precio: 20, cantidad: 1 }
+  ];
 
-  constructor(private carritoService: CarritoService) {}
-
-  ngOnInit(): void {
-    this.carrito = this.carritoService.obtenerCarrito();  // Obtener los productos del carrito
+  // Función para añadir una unidad de un producto
+  agregarUnidad(index: number) {
+    this.carrito[index].cantidad++;
   }
 
-  getTotal(): number {
-    return this.carritoService.getTotal();  // Obtener el total del carrito
+  // Función para quitar una unidad de un producto
+  quitarUnidad(index: number) {
+    if (this.carrito[index].cantidad > 0) {
+      this.carrito[index].cantidad--;
+    }
   }
 
-  eliminarProducto(index: number): void {
-    this.carritoService.eliminarProducto(index);  // Eliminar producto del carrito
+  // Función para eliminar un producto del carrito
+  eliminarProducto(index: number) {
+    this.carrito.splice(index, 1);
   }
 
-  agregarUnidad(index: number): void {
-    this.carritoService.agregarUnidad(index);  // Aumentar cantidad del producto
+  // Función para realizar el pedido (puede ser para redirigir o mostrar un mensaje)
+  realizarPedido() {
+    alert('Pedido realizado con éxito');
+    // Aquí puedes agregar la lógica para redirigir o enviar los datos del pedido.
   }
 
-  quitarUnidad(index: number): void {
-    this.carritoService.quitarUnidad(index);  // Reducir cantidad del producto
-  }
-
-  realizarPedido(): void {
-    alert('Pedido realizado');
+  // Obtener el total de la compra
+  getTotal() {
+    return this.carrito.reduce((total, producto) => total + (producto.precio * producto.cantidad), 0);
   }
 }

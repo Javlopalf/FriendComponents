@@ -1,7 +1,6 @@
 // src/app/productos/productos.component.ts
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CarritoService } from '../carritoService/carrito.service';
 
 @Component({
   selector: 'app-productos',
@@ -82,7 +81,6 @@ export class ProductosComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private carritoService: CarritoService // Inyectar el servicio del carrito
   ) {}
 
   ngOnInit(): void {
@@ -102,9 +100,5 @@ export class ProductosComponent implements OnInit {
   cargarProductos(nombreCategoria: string): void {
     const categoria = this.categorias.find(cat => cat.nombre === nombreCategoria);
     this.productos = categoria ? categoria.productos : [];
-  }
-
-  agregarAlCarrito(producto: any): void {
-    this.carritoService.agregarAlCarrito(producto);
   }
 }
