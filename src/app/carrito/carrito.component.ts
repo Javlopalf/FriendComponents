@@ -1,6 +1,6 @@
 // src/app/carrito/carrito.component.ts
 import { Component, OnInit } from '@angular/core';
-import { CarritoService } from '../carrito/carrito.service';  // Asegúrate de importar el servicio
+import { CarritoService } from '../carritoService/carrito.service';  // Asegúrate de importar el servicio
 
 @Component({
   selector: 'app-carrito',

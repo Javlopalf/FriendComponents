@@ -8,7 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { ProductosComponent } from './productos/productos.component';
-import { CarritoService } from './carrito/carrito.service';
+import { CarritoService } from './carritoService/carrito.service';
 
 @NgModule({
   declarations: [

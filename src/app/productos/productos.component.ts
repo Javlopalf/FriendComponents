@@ -1,7 +1,7 @@
 // src/app/productos/productos.component.ts
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CarritoService } from '../carrito/carrito.service';
+import { CarritoService } from '../carritoService/carrito.service';
 
 @Component({
   selector: 'app-productos',
