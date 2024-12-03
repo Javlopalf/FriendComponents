@@ -1,20 +1,35 @@
 <div class="form-container register">
-    <h2>Registrarse</h2>
-    <form>
-      <div class="form-group">
-        <input type="text" name="name" placeholder="Nombre completo" required>
+  <h2>Registrarse</h2>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <input type="text" formControlName="name" placeholder="Nombre completo">
+      <div *ngIf="submitted && f['name'].errors" class="error">
+        <small *ngIf="f['name'].errors?.['required']">El nombre es obligatorio.</small>
+        <small *ngIf="f['name'].errors?.['minlength']">El nombre debe tener al menos 3 caracteres.</small>
       </div>
-      <div class="form-group">
-        <input type="email" name="email" placeholder="Correo electrónico" required>
+    </div>
+    <div class="form-group">
+      <input type="email" formControlName="email" placeholder="Correo electrónico">
+      <div *ngIf="submitted && f['email'].errors" class="error">
+        <small *ngIf="f['email'].errors?.['required']">El correo es obligatorio.</small>
+        <small *ngIf="f['email'].errors?.['email']">Debe ser un correo válido.</small>
       </div>
-      <div class="form-group">
-        <input type="password" name="password" placeholder="Contraseña" required>
+    </div>
+    <div class="form-group">
+      <input type="password" formControlName="password" placeholder="Contraseña">
+      <div *ngIf="submitted && f['password'].errors" class="error">
+        <small *ngIf="f['password'].errors?.['required']">La contraseña es obligatoria.</small>
+        <small *ngIf="f['password'].errors?.['minlength']">Debe tener al menos 6 caracteres.</small>
       </div>
-      <div class="form-group">
-        <input type="password" name="confirmPassword" placeholder="Confirmar contraseña" required>
+    </div>
+    <div class="form-group">
+      <input type="password" formControlName="confirmPassword" placeholder="Confirmar contraseña">
+      <div *ngIf="submitted && f['confirmPassword'].errors" class="error">
+        <small *ngIf="f['confirmPassword'].errors?.['required']">La confirmación es obligatoria.</small>
+        <small *ngIf="f['confirmPassword'].errors?.['passwordMismatch']">Las contraseñas no coinciden.</small>
       </div>
-      <button type="submit">Registrarse</button>
-    </form>
-    <p>¿Ya tienes cuenta? <a routerLink="/login">Inicia sesión aquí</a></p>
-  </div>
-  
+    </div>
+    <button type="submit">Registrarse</button>
+  </form>
+  <p>¿Ya tienes cuenta? <a routerLink="/login">Inicia sesión aquí</a></p>
+</div>
