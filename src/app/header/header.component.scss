@@ -1,51 +1,60 @@
-/* Reset de márgenes y padding para evitar espacio sobrante */
+/* Reset general */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Incluye padding y borde en el tamaño total de los elementos */
+  box-sizing: border-box; /* Asegura que padding y borde se incluyan en el tamaño total */
 }
 
-/* Estructura general del header */
+/* Header */
 .header {
-  display: flex;
-  justify-content: space-between; /* Espacio entre los elementos */
-  align-items: center;
-  background-color: #2F1893;
-  color: rgb(241, 231, 231);
-  padding: 0 20px; /* Asegúrate de que el padding no cause un espacio extra */
-  width: 100%; /* Asegura que el header ocupe todo el ancho */
-
+  display: flex; /* Flexbox para distribuir los elementos */
+  justify-content: space-between; /* Espacio entre el logo, texto y las imágenes */
+  align-items: center; /* Centra verticalmente los elementos */
+  width: 100%; /* Ocupa el 100% del ancho */
+  background-color: #2F1893; /* Fondo del header */
+  padding: 0; /* Sin padding extra */
 }
 
-/* Logo a la izquierda */
+/* Logo alineado a la izquierda */
+.header .logo {
+  display: flex; /* Flexbox para centrar el logo */
+  align-items: center; /* Centra el logo verticalmente */
+}
+
 .header .logo img {
-  width: 25%; /* Tamaño del logo ajustado */
+  width: 20%; /* Ajusta el tamaño del logo */
   height: auto; /* Mantiene la proporción del logo */
+  margin-left: 10px; /* Asegura que el logo no esté pegado al borde izquierdo */
 }
 
-/* Contenedor de texto centrado */
+/* Texto centrado */
 .header .text-container {
-  flex: 1; /* Hace que ocupe el espacio restante entre el logo y las imágenes */
-  text-align: center; /* Centra el texto */
-  justify-content: center;
+  flex-grow: 1; /* Ocupa el espacio restante entre el logo y las imágenes */
+  text-align: center; /* Centra el texto horizontalmente */
 }
 
 .header .text-container span {
   color: white; /* Color del texto */
-  font-size: 32px; /* Tamaño del texto */
-  justify-content: center;
+  font-size: 28px; /* Tamaño del texto */
+  font-weight: bold; /* Hace el texto más visible */
 }
 
-/* Contenedor de imágenes a la derecha */
+/* Alineación de las imágenes a la derecha */
 .header .images-container {
-  display: flex;
+  display: flex; /* Flexbox para alinear las imágenes horizontalmente */
   align-items: center; /* Centra las imágenes verticalmente */
-  justify-content: flex-end; /* Alinea las imágenes a la derecha */
+  margin-left: auto;
+  margin-right: 5%; /* Empuja las imágenes completamente hacia la derecha */
+  gap: 10px; /* Espaciado entre las imágenes */
+}
+
+.header .images-container a {
+  display: flex;
 }
 
 .header .images-container img {
-  width: 6%; /* Ajusta el tamaño de las imágenes */
-  height: auto; /* Mantiene la proporción */
+  width: 40px; /* Ajusta el tamaño de las imágenes (puedes cambiar esto a lo que necesites) */
+  height: auto; /* Mantiene la proporción de las imágenes */
   object-fit: cover; /* Asegura que las imágenes no se deformen */
-  margin-left: 10px; /* Espaciado entre las imágenes */
+  margin-right: 5%;
 }
