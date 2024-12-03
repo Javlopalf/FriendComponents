@@ -4,7 +4,7 @@
     <h2>Categorías</h2>
     <ul class="category-list">
       <li *ngFor="let categoria of data">
-        <a (click)="cambiarCategoria(categoria.nombre)">{{ categoria.nombre }}</a>
+        <a (click)="seleccionarCategoria(categoria.nombre)">{{ categoria.nombre }}</a>
       </li>
     </ul>
   </aside>
@@ -14,7 +14,7 @@
     <h1>{{ categoriaSeleccionada }}</h1>
     <div *ngFor="let categoria of data">
       <div *ngIf="categoria.nombre === categoriaSeleccionada">
-        <div *ngFor="let producto of categoria.productos" class="product-card">
+        <div *ngFor="let producto of productos" class="product-card">
           <img [src]="producto.imagen" alt="{{ producto.nombre }}">
           <div class="product-info">
             <h3>{{ producto.nombre }}</h3>

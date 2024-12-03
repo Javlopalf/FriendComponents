@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inicio',
@@ -7,7 +8,7 @@ import { Component } from '@angular/core';
 })
 export class InicioComponent {
   categorias = [
-    { nombre: 'programas', imagen: '../../assets/images/programas.jpg' },
+    { nombre: 'Programas', imagen: '../../assets/images/programas.jpg' },
     { nombre: 'SSD', imagen: '../../assets/images/ssd.jpg' },
     { nombre: 'Placas Bases', imagen: '../../assets/images/placasBases.jpg' },
     { nombre: 'Ventiladores', imagen: '../../assets/images/ventilador.jpg' },
@@ -20,4 +21,11 @@ export class InicioComponent {
     { nombre: 'Monitores', imagen: '../../assets/images/monitor.jpg' },
     { nombre: 'Foros', imagen: '../../assets/images/foros.jpg' }
   ];
+
+  constructor(private router: Router) {}
+
+  seleccionarCategoria(categoria: string): void {
+    // Redirige al componente MenuComponent pasando la categoría como parámetro
+    this.router.navigate(['../productos', categoria]);
+  }
 }
