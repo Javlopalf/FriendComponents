@@ -8,6 +8,8 @@ import { HeaderComponent } from './header/header.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { ProductosComponent } from './productos/productos.component';
+import { LoginComponent } from './login/login.component';
+import { RegistroComponent } from './registro/registro.component';
 import { CarritoService } from './carritoService/carrito.service';
 
 @NgModule({
@@ -17,7 +19,9 @@ import { CarritoService } from './carritoService/carrito.service';
     HeaderComponent,
     InicioComponent,
     CarritoComponent,
-    ProductosComponent
+    ProductosComponent,
+    LoginComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,
