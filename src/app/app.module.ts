@@ -11,6 +11,7 @@ import { ProductosComponent } from './productos/productos.component';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
 import { CarritoService } from './carritoService/carrito.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,12 +22,14 @@ import { CarritoService } from './carritoService/carrito.service';
     CarritoComponent,
     ProductosComponent,
     LoginComponent,
-    RegistroComponent
+    RegistroComponent,
+  
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule
   ],
   providers: [CarritoService],
   bootstrap: [AppComponent]
