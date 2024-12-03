@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Contenedor principal */
 .container {
   display: grid;
@@ -35,6 +36,8 @@
 .category-list li {
   margin-bottom: 10px;
   position: relative;
+  width: 50%;
+  margin-right: 40%;
 }
 
 .category-list a {
@@ -57,15 +60,18 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 100%;
+  width: 0;
+  /* Comienza con el ancho en 0 */
   height: 2px;
   background-color: #4b0082;
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
+  transition: width 0.5s ease;
+  /* Cambiar scaleX a un cambio de ancho */
 }
 
+/* Establece el ancho al 100% al pasar el ratón */
 .category-list a:hover::before {
-  transform: scaleX(1);
+  width: 100%;
+  /* La línea se expandirá de izquierda a derecha */
 }
 
 /* Productos */
