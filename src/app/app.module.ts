@@ -20,12 +20,14 @@ import { RegistroComponent } from './registro/registro.component';
     CarritoComponent,
     ProductosComponent,
     LoginComponent,
-    RegistroComponent
+    RegistroComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

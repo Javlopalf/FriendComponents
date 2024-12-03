@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-registro',
@@ -6,5 +7,51 @@ import { Component } from '@angular/core';
   styleUrls: ['./registro.component.scss']
 })
 export class RegistroComponent {
+  registerForm: FormGroup;
+  submitted = false;
 
+  constructor(private formBuilder: FormBuilder) {
+    this.registerForm = this.formBuilder.group({
+      name: ['', [Validators.required, Validators.minLength(3)]],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      confirmPassword: ['', Validators.required]
+    }, {
+      validator: this.matchPasswords('password', 'confirmPassword') // Validador personalizado
+    });
+  }
+
+  // Validador personalizado para comparar contraseñas
+  matchPasswords(password: string, confirmPassword: string) {
+    return (formGroup: FormGroup) => {
+      const passControl = formGroup.controls[password];
+      const confirmPassControl = formGroup.controls[confirmPassword];
+
+      if (confirmPassControl.errors && !confirmPassControl.errors['passwordMismatch']) {
+        return;
+      }
+
+      if (passControl.value !== confirmPassControl.value) {
+        confirmPassControl.setErrors({ passwordMismatch: true });
+      } else {
+        confirmPassControl.setErrors(null);
+      }
+    };
+  }
+
+  onSubmit() {
+    this.submitted = true;
+
+    if (this.registerForm.invalid) {
+      return; // Detener si el formulario no es válido
+    }
+
+    // Procesar datos de registro
+    console.log('Formulario válido:', this.registerForm.value);
+  }
+
+  // Getter para simplificar el acceso a los controles del formulario
+  get f() {
+    return this.registerForm.controls;
+  }
 }
