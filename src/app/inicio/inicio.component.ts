@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class InicioComponent {
   categorias = [
-    { nombre: 'Programas', imagen: '../../assets/images/programas.jpg' },
+    { nombre: 'programas', imagen: '../../assets/images/programas.jpg' },
     { nombre: 'SSD', imagen: '../../assets/images/ssd.jpg' },
     { nombre: 'Placas Bases', imagen: '../../assets/images/placasBases.jpg' },
     { nombre: 'Ventiladores', imagen: '../../assets/images/ventilador.jpg' },
