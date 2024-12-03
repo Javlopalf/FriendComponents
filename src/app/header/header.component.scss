@@ -22,7 +22,7 @@
 }
 
 .header .logo img {
-  width: 20%; /* Ajusta el tamaño del logo */
+  width: 30%; /* Ajusta el tamaño del logo */
   height: auto; /* Mantiene la proporción del logo */
   margin-left: 10px; /* Asegura que el logo no esté pegado al borde izquierdo */
 }
@@ -37,6 +37,7 @@
   color: white; /* Color del texto */
   font-size: 28px; /* Tamaño del texto */
   font-weight: bold; /* Hace el texto más visible */
+  font-family: Georgia, serif;
 }
 
 /* Alineación de las imágenes a la derecha */
