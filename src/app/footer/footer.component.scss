@@ -3,10 +3,20 @@ $color-secundario:#FFFFFF;
 *{
     margin:0;
     padding:0;
+    box-sizing: border-box;
+}
+.footer{
+    display: grid;
+    grid-template-rows: auto 1fr auto;
 }
 footer{
     background-color: $color-principal;
     color: $color-secundario;
+    bottom: 0;
+    width: 100%;
+    bottom: 0;
+    position: relative;
+    padding-bottom: 3em;
 }
 a{
     color: $color-secundario !important;
