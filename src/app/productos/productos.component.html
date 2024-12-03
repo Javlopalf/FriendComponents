@@ -21,7 +21,7 @@
             <p>{{ producto.descripcion }}</p>
             <div class="price-rating">
               <span class="price">{{ producto.precio | currency:'EUR' }}</span>
-              <span class="rating">{{ producto.valoracion }}</span>
+              <span class="rating">{{ producto.valoracion }}<img src="../../assets/images/estrella.png" alt="estrella"/> </span>
             </div>
             <button class="btn purchase">Purchase</button>
             <button class="btn add-to-bag" (click)="agregarAlCarrito(producto)">Add to Bag</button>
