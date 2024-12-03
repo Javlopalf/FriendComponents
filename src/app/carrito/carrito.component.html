@@ -1,24 +1,23 @@
+
 <div class="carrito-container">
-  <h2>Mi Carrito</h2>
-
-  <div *ngFor="let producto of carrito; let i = index" class="producto">
-    <div class="producto-info">
-      <span>{{ producto.nombre }}</span>
-      <span>${{ producto.precio }}</span>
-    </div>
-
-    <div class="producto-cantidad">
-      <button (click)="quitarUnidad(i)">-</button>
-      <span>{{ producto.cantidad }}</span>
-      <button (click)="agregarUnidad(i)">+</button>
-    </div>
-
-    <button class="eliminar" (click)="eliminarProducto(i)">Eliminar</button>
+<div *ngFor="let producto of carrito; let i = index" class="producto">
+  <div class="producto-info">
+    <span>{{ producto.nombre }}</span>
+    <span>{{ producto.precio | currency:'EUR' }}</span>
   </div>
 
-  <div class="total">
-    <h3>Total: ${{ getTotal() }}</h3>
+  <div class="producto-cantidad">
+    <button (click)="quitarUnidad(i)">-</button>
+    <span>{{ producto.cantidad }}</span>
+    <button (click)="agregarUnidad(i)">+</button>
   </div>
 
-  <button class="realizar-pedido" (click)="realizarPedido()">Realizar Pedido</button>
+  <button class="eliminar" (click)="eliminarProducto(i)">Eliminar</button>
+</div>
+
+<div class="total">
+  <h3>Total: {{ getTotal() | currency:'EUR' }}</h3>
+</div>
+
+<button class="realizar-pedido" (click)="realizarPedido()">Realizar Pedido</button>
 </div>

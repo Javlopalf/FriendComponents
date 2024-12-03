@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { ProductosComponent } from './productos/productos.component';
+import { CarritoService } from './carrito/carrito.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { ProductosComponent } from './productos/productos.component';
     AppRoutingModule,
     CommonModule
   ],
-  providers: [],
+  providers: [CarritoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

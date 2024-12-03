@@ -1,0 +1,52 @@
+@charset "UTF-8";
+/* Reset de márgenes y padding para evitar espacio sobrante */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Incluye padding y borde en el tamaño total de los elementos */
+}
+
+/* Estructura general del header */
+.header {
+  display: flex;
+  justify-content: space-between; /* Espacio entre los elementos */
+  align-items: center;
+  background-color: #2F1893;
+  color: rgb(241, 231, 231);
+  padding: 0 20px; /* Asegúrate de que el padding no cause un espacio extra */
+  width: 100%; /* Asegura que el header ocupe todo el ancho */
+}
+
+/* Logo a la izquierda */
+.header .logo img {
+  width: 25%; /* Tamaño del logo ajustado */
+  height: auto; /* Mantiene la proporción del logo */
+}
+
+/* Contenedor de texto centrado */
+.header .text-container {
+  flex: 1; /* Hace que ocupe el espacio restante entre el logo y las imágenes */
+  text-align: center; /* Centra el texto */
+  justify-content: center;
+}
+
+.header .text-container span {
+  color: white; /* Color del texto */
+  font-size: 32px; /* Tamaño del texto */
+  justify-content: center;
+}
+
+/* Contenedor de imágenes a la derecha */
+.header .images-container {
+  display: flex;
+  align-items: center; /* Centra las imágenes verticalmente */
+  justify-content: flex-end; /* Alinea las imágenes a la derecha */
+}
+
+.header .images-container img {
+  width: 6%; /* Ajusta el tamaño de las imágenes */
+  height: auto; /* Mantiene la proporción */
+  -o-object-fit: cover;
+     object-fit: cover; /* Asegura que las imágenes no se deformen */
+  margin-left: 10px; /* Espaciado entre las imágenes */
+}/*# sourceMappingURL=header.component.css.map */
