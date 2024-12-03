@@ -1,0 +1,47 @@
+$color-principal: #2F1893;
+
+
+.divider:after,
+.divider:before {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #eee;
+}
+
+.h-custom {
+    height: calc(100% - 73px);
+}
+
+@media (max-width: 450px) {
+    .h-custom {
+        height: 100%;
+    }
+}
+
+.img-fluid{
+    width: 500px;
+    margin-left: 35%;
+}
+
+.form-group {
+    background-color: $color-principal;
+    border-radius: 9px;
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 15px;
+    padding: 40px;
+
+}
+input{
+    border: 2px solid #fff;
+    border-radius: 9px;
+}
+input[type=button]{
+    border: 2px solid #f03c7c;
+    border-radius: 30px;
+    background-color: #f03c7c;
+    color: #fff;
+    padding: 20px;
+    font-weight: 600;
+}
