@@ -1,9 +1,12 @@
+$color-principal: #2F1893;
+
 .categorias-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* 4 columnas */
   grid-template-rows: repeat(3, 1fr);   /* 3 filas */
   gap: 20px; /* Espacio entre categorías */
   padding: 20px;
+  background: linear-gradient(180deg, #ffffff 0%, $color-principal 100%); /* Gradiente de colores */
 }
 
 .categoria {

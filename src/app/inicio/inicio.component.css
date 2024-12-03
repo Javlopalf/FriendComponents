@@ -5,6 +5,7 @@
   grid-template-rows: repeat(3, 1fr); /* 3 filas */
   gap: 20px; /* Espacio entre categorías */
   padding: 20px;
+  background: linear-gradient(180deg, #ffffff 0%, #2F1893 100%); /* Gradiente de colores */
 }
 
 .categoria {
