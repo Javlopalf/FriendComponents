@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-productos',
   templateUrl: './productos.component.html',
   styleUrls: ['./productos.component.css']
 })
-export class ProductosComponent {
-    data = [
+export class ProductosComponent implements OnInit {
+  data = [
     {
       nombre: 'Programas',
       productos: [
@@ -73,10 +74,28 @@ export class ProductosComponent {
     },
   ];
 
-  categoriaSeleccionada: string = 'Programas'; // Valor inicial
+  categorias: any[] = [];
+  productos: any[] = [];
+  categoriaSeleccionada: string = '';
 
-  cambiarCategoria(categoria: string): void {
-    this.categoriaSeleccionada = categoria;
+  constructor(private route: ActivatedRoute) {}
+
+  ngOnInit(): void {
+    this.categorias = this.data;
+    const categoria = this.route.snapshot.paramMap.get('categoria');
+    if (categoria) {
+      this.categoriaSeleccionada = categoria;
+      this.cargarProductos(categoria);
+    }
   }
 
+  seleccionarCategoria(nombreCategoria: string): void {
+    this.categoriaSeleccionada = nombreCategoria;
+    this.cargarProductos(nombreCategoria);
+  }
+
+  cargarProductos(nombreCategoria: string): void {
+    const categoria = this.categorias.find(cat => cat.nombre === nombreCategoria);
+    this.productos = categoria ? categoria.productos : [];
+  }
 }
