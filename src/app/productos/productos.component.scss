@@ -8,26 +8,29 @@ $color-principal: #2F1893;
   gap: 20px;
   padding: 20px;
   font-family: 'Arial', sans-serif;
-  background-color: #ffffff;
+  background: linear-gradient(123deg, #ffffff 0%, $color-principal 100%); /* Gradiente de colores */
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Sidebar */
-.sidebar {
-  background-color: #f9f9f9;
+.sidebar {  
+  background-color: #ffffff;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: #fff; /* Asegúrate de que el texto sea visible */
 }
 
 .sidebar h2 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 18px;
-  margin-bottom: 10px;
+  margin-bottom: 5%;
   color: $color-principal;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1px;  
+  text-decoration: underline solid 3px ;
 }
 
 .category-list {
@@ -37,6 +40,7 @@ $color-principal: #2F1893;
 }
 
 .category-list li {
+  
   margin-bottom: 10px;
   position: relative;
   width: 50%;
@@ -44,16 +48,17 @@ $color-principal: #2F1893;
 }
 
 .category-list a {
-  text-decoration: none;
-  color: #333;
+  color: $color-principal;
+  text-decoration: none;  
   font-size: 16px;
   font-weight: 500;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   transition: color 0.3s ease;
 
 }
 
 .category-list a:hover {
-  color: #4b0082;
+  color: #5f079e;
   font-weight: bold;
   letter-spacing: 1px;
   cursor: pointer;
@@ -66,7 +71,7 @@ $color-principal: #2F1893;
   left: 0;
   width: 0;  /* Comienza con el ancho en 0 */
   height: 2px;
-  background-color:  $color-principal;
+  background-color: #5f079e;
   transition: width 0.5s ease; /* Cambiar scaleX a un cambio de ancho */
 }
 
