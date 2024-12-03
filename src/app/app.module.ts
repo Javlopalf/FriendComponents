@@ -10,6 +10,7 @@ import { CarritoComponent } from './carrito/carrito.component';
 import { ProductosComponent } from './productos/productos.component';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
+import { CarritoService } from './carritoService/carrito.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { RegistroComponent } from './registro/registro.component';
     AppRoutingModule,
     CommonModule
   ],
-  providers: [],
+  providers: [CarritoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

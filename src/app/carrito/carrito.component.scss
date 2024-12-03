@@ -1,81 +1,133 @@
-$color-principal: #2F1893;
+$primary-color: #3c8dbc;  // Color principal de la página
+$secondary-color: #f4f4f4;  // Fondo claro
+$accent-color: #ff6f61; // Color de acento (por ejemplo, para botones de eliminar)
+$button-hover-color: darken($primary-color, 10%);
+$font-family: 'Arial', sans-serif;
 
 .carrito-container {
-  width: 80%;
-  max-width: 600px;
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #f9f9f9;
+  background-color: $secondary-color;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+  font-family: $font-family;
 
-h2 {
-  text-align: center;
-  margin-bottom: 20px;
-}
+  h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: $primary-color;
+    margin-bottom: 20px;
+  }
 
-.producto {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 15px;
-  padding: 10px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
+  .producto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
-.producto-info {
-  flex: 1;
-}
+    .producto-info {
+      display: flex;
+      justify-content: space-between;
+      flex-grow: 1;
 
-.producto-cantidad {
-  display: flex;
-  align-items: center;
-}
+      span {
+        font-size: 1rem;
+        color: #333;
+      }
 
-button {
-  padding: 5px 10px;
-  margin: 0 5px;
-  background-color: $color-principal;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
+      span:nth-child(2) {
+        font-weight: bold;
+        color: $primary-color;
+      }
+    }
 
-button:hover {
-  background-color: #6a1e9c;
-}
+    .producto-cantidad {
+      display: flex;
+      align-items: center;
 
-.eliminar {
-  background-color: #ff4444;
-}
+      button {
+        background-color: $primary-color;
+        color: white;
+        border: none;
+        padding: 8px 12px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
 
-.eliminar:hover {
-  background-color: #ff0000;
-}
+        &:hover {
+          background-color: $button-hover-color;
+        }
 
-.total {
-  margin-top: 20px;
-  text-align: right;
-  font-size: 18px;
-  font-weight: bold;
-}
+        &:focus {
+          outline: none;
+        }
+      }
 
-.realizar-pedido {
-  width: 100%;
-  padding: 10px;
-  background-color: $color-principal;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 18px;
-  cursor: pointer;
-  margin-top: 20px;
-}
+      span {
+        margin: 0 10px;
+        font-size: 1.2rem;
+        color: #555;
+      }
+    }
 
-.realizar-pedido:hover {
-  background-color: #6a1e9c;
+    .eliminar {
+      background-color: $accent-color;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: darken($accent-color, 10%);
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  .total {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #333;
+
+    h3 {
+      color: $primary-color;
+    }
+  }
+
+  .realizar-pedido {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: $primary-color;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 30px;
+
+    &:hover {
+      background-color: $button-hover-color;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
 }

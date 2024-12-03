@@ -3,7 +3,6 @@ html, body {
   height: 100%;
   margin: 0;
   display: flex;
-  padding-top: 100px;
-  /* Ajusta este valor según la altura real del navbar */
+  padding-top: 100px; /* Ajusta este valor según la altura real del navbar */
   background-color: #F5EBDC;
-}
+}/*# sourceMappingURL=app.component.css.map */
