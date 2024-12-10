@@ -9,7 +9,7 @@ import { RegistroComponent } from './registro/registro.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/inicio', pathMatch: 'full'},
-  {path: 'inicio', component: InicioComponent},
+  {path: 'inicio', component: InicioComponent},  
   {path: 'carrito', component: CarritoComponent},
   { path: 'productos/:categoria', component: ProductosComponent },
   { path: 'login', component: LoginComponent },

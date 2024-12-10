@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { InicioService } from '../inicio/inicio.service';
 
 @Component({
   selector: 'app-inicio',
@@ -22,10 +23,19 @@ export class InicioComponent {
     { nombre: 'Foros', imagen: '../../assets/images/foros.jpg' }
   ];
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private inicioService: InicioService) {}
 
   seleccionarCategoria(categoria: string): void {
     // Redirige al componente MenuComponent pasando la categoría como parámetro
     this.router.navigate(['../productos', categoria]);
+  }
+
+  productos: any[] = [];
+
+
+  ngOnInit(): void {
+    this.inicioService.obtenerProductos().subscribe((data) => {
+      this.productos = data;
+    });
   }
 }
