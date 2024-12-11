@@ -1,21 +1,20 @@
-/* Estilos para el formulario de Login */
-
+/* Estilos para el formulario de Registro */
 .wrapper {
-  min-height: 100vh; // Asegura que ocupe el 90% de la altura de la ventana
-  display: flex; // Activa el modelo flexbox
-  justify-content: center; // Centra horizontalmente
-  align-items: center; // Centra verticalmente
-  flex-direction: column; // Opcional, si los elementos deben apilarse en columna
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-
-.form-container {  
+.form-container {
   background-color: #fff;
   padding: 30px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 100%;  
-  max-width: 40%;  
+  width: 100%;
+  max-width: 400px;
+  margin: 50px auto;
   text-align: center;
 }
 
@@ -64,4 +63,4 @@ a {
 
 a:hover {
   text-decoration: underline;
-}
+}/*# sourceMappingURL=registro.component.css.map */

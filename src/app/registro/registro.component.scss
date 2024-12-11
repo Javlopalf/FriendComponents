@@ -1,4 +1,13 @@
 /* Estilos para el formulario de Registro */
+.wrapper {
+  min-height: 90vh; // Asegura que ocupe el 90% de la altura de la ventana
+  display: flex; // Activa el modelo flexbox
+  justify-content: center; // Centra horizontalmente
+  align-items: center; // Centra verticalmente
+  flex-direction: column; // Opcional, si los elementos deben apilarse en columna
+}
+
+
 
 .form-container {
     background-color: #fff;

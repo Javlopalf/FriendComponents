@@ -1,14 +1,15 @@
 <!-- categorias.component.html -->
-<div class="categorias-container">
-  <div *ngFor="let categoria of categorias" class="categoria">
-    <a [routerLink]="['/productos', categoria.nombre]" (click)="seleccionarCategoria(categoria.nombre)">
-      <div class="imagen">
-        <img [src]="categoria.imagen" [alt]="categoria.nombre" class="categoria-imagen" />
-      </div>
-      <p class="categoria-nombre">
-        {{ categoria.nombre }}
-      </p>
-    </a>
+<div class="wrapper">
+  <div class="categorias-container">
+    <div *ngFor="let categoria of categorias" class="categoria">
+      <a [routerLink]="['/productos', categoria.nombre]" (click)="seleccionarCategoria(categoria.nombre)">
+        <div class="imagen">
+          <img [src]="categoria.imagen" [alt]="categoria.nombre" class="categoria-imagen" />
+        </div>
+        <p class="categoria-nombre">
+          {{ categoria.nombre }}
+        </p>
+      </a>
+    </div>
   </div>
 </div>
-

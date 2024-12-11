@@ -33,12 +33,19 @@
   text-align: center; /* Centra el texto horizontalmente */
 }
 
-.header .text-container span {
+.header .text-container span a{
   color: white; /* Color del texto */
   font-size: 28px; /* Tamaño del texto */
   font-weight: bold; /* Hace el texto más visible */
   font-family: Georgia, serif;
+  text-decoration: none;
 }
+
+.header .text-container span a:hover{
+  cursor: pointer;  
+}
+
+
 
 /* Iconos a la derecha */
 .header .images-container {

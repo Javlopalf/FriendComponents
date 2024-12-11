@@ -1,9 +1,18 @@
 $color-principal: #2F1893;
 $color-secundario: #ffffff;
 
+.wrapper {
+  min-height: 100vh; // Asegura que ocupe el 90% de la altura de la ventana
+  display: flex; // Activa el modelo flexbox
+  justify-content: center; // Centra horizontalmente
+  align-items: center; // Centra verticalmente
+  flex-direction: column; // Opcional, si los elementos deben apilarse en columna
+}
+
+
+
 .carrito-container {
-  width: 100%;
-  max-width: 800px;
+  width: 90%;  
   margin: 20px auto;
   padding: 20px;
   background-color: $color-secundario;
@@ -11,7 +20,8 @@ $color-secundario: #ffffff;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 20px;  
+  
 
   .producto {
     display: flex;
@@ -65,6 +75,8 @@ $color-secundario: #ffffff;
         font-size: 14px;
         cursor: pointer;
         transition: background-color 0.3s;
+              
+        
 
         &:hover {
           background-color: lighten($color-principal, 10%);
@@ -118,6 +130,8 @@ $color-secundario: #ffffff;
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s;
+    width: 50%;
+    margin-left: 25%;
 
     &:hover {
       background-color: lighten($color-principal, 10%);
