@@ -1,5 +1,14 @@
 $color-principal: #2F1893;
 
+.wrapper {
+  min-height: 100vh; // Asegura que ocupe el 90% de la altura de la ventana
+  display: flex; // Activa el modelo flexbox
+  justify-content: center; // Centra horizontalmente
+  align-items: center; // Centra verticalmente
+  flex-direction: column; // Opcional, si los elementos deben apilarse en columna
+}
+
+
 .categorias-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* 4 columnas */
