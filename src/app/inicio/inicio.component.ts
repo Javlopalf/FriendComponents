@@ -9,18 +9,18 @@ import { InicioService } from '../inicio/inicio.service';
 })
 export class InicioComponent {
   categorias = [
-    { nombre: 'Programas', imagen: '../../assets/images/programas.jpg' },
-    { nombre: 'SSD', imagen: '../../assets/images/ssd.jpg' },
-    { nombre: 'Placas Bases', imagen: '../../assets/images/placasBases.jpg' },
-    { nombre: 'Ventiladores', imagen: '../../assets/images/ventilador.jpg' },
-    { nombre: 'Procesadores', imagen: '../../assets/images/procesador.jpg' },
-    { nombre: 'Móviles', imagen: '../../assets/images/movil.jpg' },
-    { nombre: 'Memoria RAM', imagen: '../../assets/images/ram.jpg' },
-    { nombre: 'Refrigeración líquida', imagen: '../../assets/images/refri.jpg' },
+    { nombre: 'Programas', imagen: '../../assets/images/windowsP.jpg' },
+    { nombre: 'SSD', imagen: '../../assets/images/discoP.jpg' },
+    { nombre: 'Placas Bases', imagen: '../../assets/images/placabaseP.jpg' },
+    { nombre: 'Ventiladores', imagen: '../../assets/images/ventiladorP.jpg' },
+    { nombre: 'Procesadores', imagen: '../../assets/images/procesadorP.jpg' },
+    { nombre: 'Móviles', imagen: '../../assets/images/movilesP.jpg' },
+    { nombre: 'Memoria RAM', imagen: '../../assets/images/ramP.jpg' },
+    { nombre: 'Refrigeración líquida', imagen: '../../assets/images/refrigeracionP.jpg' },
     { nombre: 'Fuentes de alimentación', imagen: '../../assets/images/fuente.jpg' },
-    { nombre: 'Torres', imagen: '../../assets/images/torre.jpg' },
+    { nombre: 'Torres', imagen: '../../assets/images/torreP.jpg' },
     { nombre: 'Monitores', imagen: '../../assets/images/monitor.jpg' },
-    { nombre: 'Foros', imagen: '../../assets/images/foros.jpg' }
+    { nombre: 'Foros', imagen: '../../assets/images/foro.jpg' }
   ];
 
   constructor(private router: Router, private inicioService: InicioService) {}
