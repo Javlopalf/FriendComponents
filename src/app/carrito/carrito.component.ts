@@ -8,7 +8,8 @@ import { Component } from '@angular/core';
 export class CarritoComponent {
   carrito: { nombre: string, precio: number, cantidad: number, imagen:string }[] = [
     { nombre: 'Producto 1', precio: 10, cantidad: 2, imagen: '../../assets/images/productos/mcr11.jpg' },
-    { nombre: 'Producto 2', precio: 20, cantidad: 1, imagen: '../../assets/images/productos/mcr22.jpg' }
+    { nombre: 'Producto 2', precio: 20, cantidad: 1, imagen: '../../assets/images/productos/mcr22.jpg' },
+    { nombre: 'Producto 3', precio: 20, cantidad: 1, imagen: '../../assets/images/productos/mcr22.jpg' }
   ];
 
   // Función para añadir una unidad de un producto
