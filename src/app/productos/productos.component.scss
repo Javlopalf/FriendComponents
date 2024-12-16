@@ -34,10 +34,10 @@ $color-principal: #2F1893;
 
 .sidebar h2 {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 18px;
+  font-size: 2rem;
   margin-bottom: 5%;
   color: $color-principal;
-  font-weight: 600;
+  font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
   text-decoration: underline solid 3px ;
@@ -92,14 +92,14 @@ $color-principal: #2F1893;
 
 /* Productos */
 .products {
-  padding: 20px;
+  padding: 10%;
 }
 
 .products h1 {
-  font-size: 24px;
+  font-size: 2.5rem;
   margin-bottom: 20px;
   color:  $color-principal;
-  font-weight: 600;
+  font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
