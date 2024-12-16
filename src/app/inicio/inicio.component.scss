@@ -1,80 +1,79 @@
 $color-principal: #2F1893;
 
 .wrapper {
-  min-height: 100vh; // Asegura que ocupe el 90% de la altura de la ventana
-  display: flex; // Activa el modelo flexbox
-  justify-content: center; // Centra horizontalmente
-  align-items: center; // Centra verticalmente
-  flex-direction: column; // Opcional, si los elementos deben apilarse en columna
+  min-height: 100vh; 
+  justify-content: center; 
+  align-items: center; 
+  flex-direction: column; 
+  margin-bottom: 5%;
 }
 
 
 .categorias-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 columnas */
-  grid-template-rows: repeat(3, 1fr);   /* 3 filas */
-  gap: 20px; /* Espacio entre categorías */
-  padding: 20px;
+  grid-template-columns: repeat(4, 1fr); 
+  grid-template-rows: repeat(3, 1fr);   
+  gap: 5%; 
+  padding: 2%;
 }
 
 .categoria {
-  background: linear-gradient(145deg, #ffffff, #f8f6f6); /* Fondo claro con un efecto de luz */
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra para elevar las categorías */
+  background: linear-gradient(145deg, #ffffff, #f8f6f6); 
+  border-radius: 10px;  
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 15px;
+  padding: 2%;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
-  text-decoration: none; /* Quitar subrayado del enlace */
+  text-decoration: none; 
 }
 
 .categoria:hover {
-  transform: translateY(-10px); /* Levanta la categoría */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el ratón */
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
 }
 
 .categoria .imagen {
-  width: 100%; /* Hace que el contenedor ocupe todo el espacio disponible */
-  height: 180px; /* Altura fija para las imágenes */
+  width: 258px;
+  height: 280px;
   display: flex;
-  justify-content: center; /* Centra horizontalmente la imagen */
-  align-items: center; /* Centra verticalmente la imagen */
+  justify-content: center;
+  align-items: center; 
   border-radius: 10px;
-  border: 2px solid #ddd; /* Borde decorativo alrededor de la imagen */
-  overflow: hidden; /* Oculta cualquier parte de la imagen que sobresalga */
+  overflow: hidden;
 }
 
 .categoria .imagen img {
-  width: 100%; /* La imagen ocupa el 100% del ancho del contenedor */
-  height: 100%; /* La imagen ocupa el 100% de la altura del contenedor */
-  object-fit: cover; /* Mantiene las proporciones de la imagen y cubre el área sin deformarse */
-  transition: transform 0.3s ease; /* Suaviza animaciones al pasar el ratón */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
 .categoria:hover .imagen img {
-  transform: scale(1.1); /* Amplía ligeramente la imagen */
+  transform: scale(1.1); 
 }
 
 .categoria-nombre {
-  margin-top: 10px; /* Espacio entre imagen y texto */
+  margin-top: 10px; 
   font-size: 18px;
-  font-weight: 700; /* Fuente más gruesa */
+  font-weight: 700;
   color: #333;
-  text-transform: uppercase; /* Todo el texto en mayúsculas */
-  letter-spacing: 1px; /* Espaciado entre letras */
+  text-transform: uppercase;
+  letter-spacing: 1px; 
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .categoria-nombre:hover {
-  color: #4b0082; /* Cambiar color al pasar el ratón */
-  transform: translateY(-5px); /* Efecto de movimiento al pasar el ratón */
+  color: #4b0082;
+  transform: translateY(-1px);
 }
 
 .categoria a {
-  text-decoration: none; /* Quitar subrayado del enlace */
-  color: inherit; /* Heredar color del contenedor */
+  text-decoration: none; 
+  color: inherit; 
 }

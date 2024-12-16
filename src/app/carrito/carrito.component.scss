@@ -12,7 +12,8 @@ $color-secundario: #ffffff;
 
 
 .carrito-container {
-  width: 90%;  
+  height: auto;
+  width: 60%;  
   margin: 20px auto;
   padding: 20px;
   background-color: $color-secundario;
@@ -33,7 +34,7 @@ $color-secundario: #ffffff;
     transition: background-color 0.3s;
 
     &:hover {
-      background-color: lighten($color-principal, 50%);
+      background-color: lighten($color-principal, 65%);
     }
 
     .producto-info {
@@ -121,6 +122,7 @@ $color-secundario: #ffffff;
   }
 
   .realizar-pedido {
+    margin-top: 2%;
     background-color: $color-principal;
     color: $color-secundario;
     border: none;
