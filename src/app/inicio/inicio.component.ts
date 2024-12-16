@@ -9,18 +9,18 @@ import { InicioService } from '../inicio/inicio.service';
 })
 export class InicioComponent {
   categorias = [
-    { nombre: 'Programas', imagen: '../../assets/images/programas.jpg', fuente:"" },
-    { nombre: 'SSD', imagen: '../../assets/images/ssd.jpg',  fuente:"" },
-    { nombre: 'Placas Bases', imagen: '../../assets/images/placasBases.jpg', fuente:"" },
-    { nombre: 'Ventiladores', imagen: '../../assets/images/ventilador.jpg' , fuente:""},
-    { nombre: 'Procesadores', imagen: '../../assets/images/procesador.jpg', fuente:"" },
-    { nombre: 'Móviles', imagen: '../../assets/images/movil.jpg', fuente:"" },
-    { nombre: 'Memoria RAM', imagen: '../../assets/images/ram.jpg', fuente:"" },
-    { nombre: 'Refrigeración líquida', imagen: '../../assets/images/refri.jpg', fuente:"" },
-    { nombre: 'Fuentes de alimentación', imagen: '../../assets/images/fuente.jpg', fuente:"" },
-    { nombre: 'Torres', imagen: '../../assets/images/torre.jpg' , fuente:""},
-    { nombre: 'Monitores', imagen: '../../assets/images/monitor.jpg', fuente:"" },
-    { nombre: 'Foros', imagen: '../../assets/images/foros.jpg', fuente:"" }
+    { nombre: 'Programas', imagen: '../../assets/images/windowsP.jpg', fuente:"https://pixabay.com/es/" },
+    { nombre: 'SSD', imagen: '../../assets/images/discoP.jpg',  fuente:"https://www.freepik.es/" },
+    { nombre: 'Placas Bases', imagen: '../../assets/images/placabaseP.jpg', fuente:"https://www.freepik.es/"},
+    { nombre: 'Ventiladores', imagen: '../../assets/images/ventiladorP.jpg' , fuente:"https://pixabay.com/es/"},
+    { nombre: 'Procesadores', imagen: '../../assets/images/procesadorP.jpg', fuente:"https://www.freepik.es/" },
+    { nombre: 'Móviles', imagen: '../../assets/images/movilesP.jpg', fuente:"https://www.freepik.es/" },
+    { nombre: 'Memoria RAM', imagen: '../../assets/images/ramP.jpg', fuente:"https://www.freepik.es/" },
+    { nombre: 'Refrigeración líquida', imagen: '../../assets/images/refrigeracionP.jpg', fuente:"https://www.freepik.es/" },
+    { nombre: 'Fuentes de alimentación', imagen: '../../assets/images/fuente.jpg', fuente:"https://www.freepik.es/" },
+    { nombre: 'Torres', imagen: '../../assets/images/torreP.jpg' , fuente:"https://www.freepik.es/"},
+    { nombre: 'Monitores', imagen: '../../assets/images/monitor.jpg', fuente:"https://pixabay.com/es/" },
+    { nombre: 'Foros', imagen: '../../assets/images/foro.jpg', fuente:"https://www.freepik.es/" }
   ];
 
   constructor(private router: Router, private inicioService: InicioService) {}
