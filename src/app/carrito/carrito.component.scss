@@ -2,14 +2,12 @@ $color-principal: #2F1893;
 $color-secundario: #ffffff;
 
 .wrapper {
-  min-height: 100vh; // Asegura que ocupe el 90% de la altura de la ventana
+  min-height: 100vh; // Asegura que ocupe toda la altura de la ventana
   display: flex; // Activa el modelo flexbox
   justify-content: center; // Centra horizontalmente
   align-items: center; // Centra verticalmente
-  flex-direction: column; // Opcional, si los elementos deben apilarse en columna
+  flex-direction: column; // Apila los elementos verticalmente
 }
-
-
 
 .carrito-container {
   height: auto;
@@ -22,7 +20,6 @@ $color-secundario: #ffffff;
   display: flex;
   flex-direction: column;
   gap: 20px;  
-  
 
   .producto {
     display: flex;
@@ -76,8 +73,6 @@ $color-secundario: #ffffff;
         font-size: 14px;
         cursor: pointer;
         transition: background-color 0.3s;
-              
-        
 
         &:hover {
           background-color: lighten($color-principal, 10%);
@@ -141,9 +136,19 @@ $color-secundario: #ffffff;
   }
 }
 
-/* Responsivo */
+/* Responsividad */
+
+/* Tablets (entre 768px y 1024px) */
+@media (max-width: 1024px) {
+  .carrito-container {
+    width: 80%;
+  }
+}
+
+/* Móviles (menor a 768px) */
 @media (max-width: 768px) {
   .carrito-container {
+    width: 90%;
     padding: 15px;
 
     .producto {
@@ -168,7 +173,47 @@ $color-secundario: #ffffff;
 
     .realizar-pedido {
       width: 100%;
-      text-align: center;
+      margin-left: 0;
+    }
+  }
+}
+
+/* Móviles pequeños (menor a 480px) */
+@media (max-width: 480px) {
+  .carrito-container {
+    padding: 10px;
+
+    .producto {
+      padding: 10px;
+
+      .producto-info {
+        gap: 10px;
+
+        .producto-imagen {
+          width: 50px;
+          height: 50px;
+        }
+
+        span {
+          font-size: 12px;
+        }
+      }
+
+      .producto-cantidad {
+        button {
+          padding: 5px 6px;
+          font-size: 12px;
+        }
+
+        span {
+          font-size: 12px;
+        }
+      }
+    }
+
+    .realizar-pedido {
+      font-size: 14px;
+      padding: 8px 16px;
     }
   }
 }
