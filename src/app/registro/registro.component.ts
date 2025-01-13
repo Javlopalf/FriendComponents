@@ -40,14 +40,14 @@ export class RegistroComponent {
   }
 
   onSubmit() {
-    this.submitted = true;
-
     if (this.registerForm.invalid) {
-      return; // Detener si el formulario no es válido
+      return;
+      this.registerForm.reset();
+    } else {
+      this.registerForm.reset();
+      console.log('Formulario válido:', this.registerForm.value);
+      alert("Registrado Correctamente");
     }
-
-    // Procesar datos de registro
-    console.log('Formulario válido:', this.registerForm.value);
   }
 
   // Getter para simplificar el acceso a los controles del formulario
