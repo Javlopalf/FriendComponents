@@ -1,64 +1,103 @@
-/* Contenedor principal */
 $color-principal: #2F1893;
 
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .container {
-  margin-top: 2%;
   display: grid;
   grid-template-columns: 300px 1fr; /* Sidebar y contenido principal */
   gap: 20px;
   padding: 20px;
   font-family: 'Arial', sans-serif;
-  background: linear-gradient(123deg, #ffffff 0%, $color-principal 100%); /* Gradiente de colores */
+  background: linear-gradient(123deg, #ffffff 0%, $color-principal 100%);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 90%; /* Ajusta el ancho */
+  margin: auto;
+
+  @media(max-width: 1200px){
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+
+  @media (max-width: 768px) {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    grid-template-columns: 1fr; /* Cambia a una sola columna */
+    grid-template-rows: auto auto; /* Fila para categorías y productos */
+  }
 }
 
 /* Sidebar */
-.sidebar {  
+.sidebar {
   background-color: #ffffff;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  color: #fff; /* Asegúrate de que el texto sea visible */
+
+  @media (max-width: 768px) {
+    grid-row: 1; /* Asegura que el sidebar esté en la primera fila */
+    display: flex;
+    flex-wrap: wrap; /* Permite que las categorías se ajusten en filas */
+    justify-content: center;
+    
+  }
 }
 
 .sidebar h2 {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 18px;
+  font-size: 2rem;
   margin-bottom: 5%;
   color: $color-principal;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;  
-  text-decoration: underline solid 3px ;
+  font-weight: bold;
+  text-transform: uppercase;  
+
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
 }
 
 .category-list {
   list-style: none;
   padding: 0;
   margin: 0;
+
+  @media (max-width: 768px) {
+    display: flex; /* Coloca las categorías en fila */
+    flex-wrap: wrap; /* Permite que las categorías se ajusten */
+  }
 }
 
 .category-list li {
-  
   margin-bottom: 10px;
   position: relative;
-  width: 50%;
-  margin-right: 40%;
+
+  @media (max-width: 768px) {
+    margin: 10px 5px; /* Ajusta el margen para pantallas pequeñas */
+  }
 }
 
 .category-list a {
   color: $color-principal;
-  text-decoration: none;  
+  text-decoration: none;
   font-size: 16px;
   font-weight: 500;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   transition: color 0.3s ease;
-
+  cursor: pointer;
+  @media (max-width: 768px) {
+    cursor: pointer;
+    font-size: 0.8rem; /* Reduce el tamaño de fuente en pantallas pequeñas */
+  }
 }
 
 .category-list a:hover {
-  color: #5f079e;
+  color:  #220e68;
   font-weight: bold;
   letter-spacing: 1px;
   cursor: pointer;
@@ -71,27 +110,37 @@ $color-principal: #2F1893;
   left: 0;
   width: 0;  /* Comienza con el ancho en 0 */
   height: 2px;
-  background-color: #5f079e;
+  background-color: #220e68;
   transition: width 0.5s ease; /* Cambiar scaleX a un cambio de ancho */
 }
 
 /* Establece el ancho al 100% al pasar el ratón */
 .category-list a:hover::before {
-  width: 100%; /* La línea se expandirá de izquierda a derecha */
+  width: 40%; /* La línea se expandirá de izquierda a derecha */
 }
 
 /* Productos */
 .products {
-  padding: 20px;
+  padding: 10%;
+
+  @media (max-width: 768px) {
+    grid-row: 2; /* Asegura que los productos estén en la segunda fila */
+  }
 }
 
 .products h1 {
-  font-size: 24px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 2.5rem;
   margin-bottom: 20px;
-  color:  $color-principal;
-  font-weight: 600;
+  color: $color-principal;
+  font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
+
+  @media (max-width: 768px) {
+    text-align: center;
+    font-size: 1.8em; /* Ajusta el tamaño de fuente para pantallas pequeñas */
+  }
 }
 
 /* Card de producto */
@@ -108,7 +157,6 @@ $color-principal: #2F1893;
   cursor: pointer;
 
   &:hover {
-    transform: translateY(-10px);
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
   }
 }
@@ -186,8 +234,8 @@ $color-principal: #2F1893;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
   &:hover {
-    background-color: #370074;
-    transform: scale(1.05);
+    background-color: #220e68;
+    transform: scale(1.02);
     box-shadow: 0 8px 10px rgba(0, 0, 0, 0.15);
   }
 }
@@ -199,8 +247,20 @@ $color-principal: #2F1893;
 
   &:hover {
     background-color: #bbb;
-    transform: scale(1.05);
+    transform: scale(1.02);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  
+  @media(max-width: 1200px){
+    margin-top: 3%;
+    font-size: 0.7rem;
+  }
+
+
+  @media (max-width: 768px) {
+      margin-top: 3%;
+      font-size: 0.8rem;
   }
 }
 

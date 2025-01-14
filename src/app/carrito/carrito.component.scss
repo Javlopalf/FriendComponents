@@ -1,133 +1,219 @@
-$primary-color: #3c8dbc;  // Color principal de la página
-$secondary-color: #f4f4f4;  // Fondo claro
-$accent-color: #ff6f61; // Color de acento (por ejemplo, para botones de eliminar)
-$button-hover-color: darken($primary-color, 10%);
-$font-family: 'Arial', sans-serif;
+$color-principal: #2F1893;
+$color-secundario: #ffffff;
+
+.wrapper {
+  min-height: 100vh; // Asegura que ocupe toda la altura de la ventana
+  display: flex; // Activa el modelo flexbox
+  justify-content: center; // Centra horizontalmente
+  align-items: center; // Centra verticalmente
+  flex-direction: column; // Apila los elementos verticalmente
+}
 
 .carrito-container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+  height: auto;
+  width: 60%;  
+  margin: 20px auto;
   padding: 20px;
-  background-color: $secondary-color;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  font-family: $font-family;
-
-  h2 {
-    text-align: center;
-    font-size: 2rem;
-    color: $primary-color;
-    margin-bottom: 20px;
-  }
+  background-color: $color-secundario;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;  
 
   .producto {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: white;
     padding: 15px;
-    margin-bottom: 15px;
+    border: 1px solid $color-principal;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: lighten($color-principal, 65%);
+    }
 
     .producto-info {
       display: flex;
-      justify-content: space-between;
-      flex-grow: 1;
+      align-items: center;
+      gap: 15px;
 
-      span {
-        font-size: 1rem;
-        color: #333;
+      .producto-imagen {
+        width: 60px;
+        height: 60px;
+        border-radius: 8px;
+        overflow: hidden;
+        border: 2px solid $color-principal;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
       }
 
-      span:nth-child(2) {
-        font-weight: bold;
-        color: $primary-color;
+      span {
+        font-size: 16px;
+        color: $color-principal;
       }
     }
 
     .producto-cantidad {
       display: flex;
       align-items: center;
+      gap: 10px;
 
       button {
-        background-color: $primary-color;
-        color: white;
+        background-color: $color-principal;
+        color: $color-secundario;
         border: none;
-        padding: 8px 12px;
-        font-size: 1rem;
+        border-radius: 4px;
+        padding: 5px 10px;
+        font-size: 14px;
         cursor: pointer;
-        transition: background-color 0.3s ease;
+        transition: background-color 0.3s;
 
         &:hover {
-          background-color: $button-hover-color;
+          background-color: lighten($color-principal, 10%);
         }
 
-        &:focus {
-          outline: none;
+        &:disabled {
+          background-color: darken($color-principal, 20%);
+          cursor: not-allowed;
         }
       }
 
       span {
-        margin: 0 10px;
-        font-size: 1.2rem;
-        color: #555;
+        font-size: 16px;
+        font-weight: bold;
+        color: $color-principal;
       }
     }
 
     .eliminar {
-      background-color: $accent-color;
-      color: white;
+      background-color: #ff4d4d;
+      color: $color-secundario;
       border: none;
-      padding: 8px 12px;
-      font-size: 1rem;
+      border-radius: 4px;
+      padding: 5px 10px;
+      font-size: 14px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      transition: background-color 0.3s;
 
       &:hover {
-        background-color: darken($accent-color, 10%);
-      }
-
-      &:focus {
-        outline: none;
+        background-color: darken(#ff4d4d, 10%);
       }
     }
   }
 
   .total {
-    display: flex;
-    justify-content: flex-end;
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-top: 20px;
-    color: #333;
+    text-align: right;
 
     h3 {
-      color: $primary-color;
+      color: $color-principal;
+      font-size: 20px;
     }
   }
 
   .realizar-pedido {
-    display: block;
-    width: 100%;
-    padding: 15px;
-    background-color: $primary-color;
-    color: white;
-    font-size: 1.2rem;
-    font-weight: bold;
+    margin-top: 2%;
+    background-color: $color-principal;
+    color: $color-secundario;
     border: none;
-    border-radius: 8px;
+    border-radius: 6px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 30px;
+    transition: background-color 0.3s;
+    width: 50%;
+    margin-left: 25%;
 
     &:hover {
-      background-color: $button-hover-color;
+      background-color: lighten($color-principal, 10%);
+    }
+  }
+}
+
+/* Responsividad */
+
+/* Tablets (entre 768px y 1024px) */
+@media (max-width: 1024px) {
+  .carrito-container {
+    width: 80%;
+  }
+}
+
+/* Móviles (menor a 768px) */
+@media (max-width: 768px) {
+  .carrito-container {
+    width: 90%;
+    padding: 15px;
+
+    .producto {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+
+      .producto-info {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .producto-cantidad {
+        width: 100%;
+        justify-content: space-between;
+      }
     }
 
-    &:focus {
-      outline: none;
+    .total {
+      text-align: center;
+    }
+
+    .realizar-pedido {
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+}
+
+/* Móviles pequeños (menor a 480px) */
+@media (max-width: 480px) {
+  .carrito-container {
+    padding: 10px;
+
+    .producto {
+      padding: 10px;
+
+      .producto-info {
+        gap: 10px;
+
+        .producto-imagen {
+          width: 50px;
+          height: 50px;
+        }
+
+        span {
+          font-size: 12px;
+        }
+      }
+
+      .producto-cantidad {
+        button {
+          padding: 5px 6px;
+          font-size: 12px;
+        }
+
+        span {
+          font-size: 12px;
+        }
+      }
+    }
+
+    .realizar-pedido {
+      font-size: 14px;
+      padding: 8px 16px;
     }
   }
 }

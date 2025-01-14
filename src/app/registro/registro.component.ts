@@ -14,8 +14,15 @@ export class RegistroComponent {
     this.registerForm = this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
-      confirmPassword: ['', Validators.required]
+      password: ['', [
+        Validators.required,
+        Validators.minLength(6),
+        Validators.pattern(/^(?=.*[A-Z])(?=.*\d).*$/) // Al menos una mayúscula y un número
+      ]],
+      confirmPassword: ['', [
+        Validators.required,
+        Validators.minLength(6),
+        Validators.pattern(/^(?=.*[A-Z])(?=.*\d).*$/) ]]
     }, {
       validator: this.matchPasswords('password', 'confirmPassword') // Validador personalizado
     });
@@ -46,8 +53,10 @@ export class RegistroComponent {
       return; // Detener si el formulario no es válido
     }
 
-    // Procesar datos de registro
+    // Limpiar el formulario y mostrar mensaje
+    this.registerForm.reset();
     console.log('Formulario válido:', this.registerForm.value);
+    alert("Registrado Correctamente");
   }
 
   // Getter para simplificar el acceso a los controles del formulario

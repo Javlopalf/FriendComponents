@@ -1,4 +1,13 @@
 /* Estilos para el formulario de Registro */
+.wrapper {
+  min-height: 90vh; // Asegura que ocupe el 90% de la altura de la ventana
+  display: flex; // Activa el modelo flexbox
+  justify-content: center; // Centra horizontalmente
+  align-items: center; // Centra verticalmente
+  flex-direction: column; // Opcional, si los elementos deben apilarse en columna
+}
+
+
 
 .form-container {
     background-color: #fff;
@@ -10,17 +19,17 @@
     margin: 50px auto;
     text-align: center;
   }
-  
+
   h2 {
     margin-bottom: 20px;
     font-size: 24px;
     color: #333;
   }
-  
+
   .form-group {
     margin-bottom: 15px;
   }
-  
+
   input {
     width: 100%;
     padding: 10px;
@@ -29,32 +38,31 @@
     border-radius: 4px;
     margin-top: 5px;
   }
-  
+
   button {
     width: 100%;
     padding: 10px;
-    background-color: #2F1893;;  
+    background-color: #2F1893;;
     color: white;
     border: none;
     font-size: 16px;
     border-radius: 4px;
     cursor: pointer;
   }
-  
+
   button:hover {
-    background-color: #f03c7c;
-  }
-  
+    background-color: #4B30A2;
+}
+
   p {
     margin-top: 15px;
   }
-  
+
   a {
     color: #2F1893;;
     text-decoration: none;
   }
-  
+
   a:hover {
     text-decoration: underline;
   }
-  

@@ -9,11 +9,6 @@
 /* Header */
 .header {
   display: flex; /* Flexbox para distribuir los elementos */
-  justify-content: space-between; /* Espacio entre el logo, texto y las imágenes */
-  align-items: center; /* Centra verticalmente los elementos */
-  width: 100%; /* Ocupa el 100% del ancho */
-  background-color: #2F1893; /* Fondo del header */
-  padding: 0; /* Sin padding extra */
 }
 
 /* Logo alineado a la izquierda */
@@ -23,40 +18,16 @@
 }
 
 .header .logo img {
-  width: 20%; /* Ajusta el tamaño del logo */
-  height: auto; /* Mantiene la proporción del logo */
-  margin-left: 10px; /* Asegura que el logo no esté pegado al borde izquierdo */
 }
 
 /* Texto centrado */
 .header .text-container {
-  flex-grow: 1; /* Ocupa el espacio restante entre el logo y las imágenes */
   text-align: center; /* Centra el texto horizontalmente */
 }
 
-.header .text-container span {
+.header .text-container span a {
   color: white; /* Color del texto */
   font-size: 28px; /* Tamaño del texto */
   font-weight: bold; /* Hace el texto más visible */
-}
 
-/* Alineación de las imágenes a la derecha */
-.header .images-container {
-  display: flex; /* Flexbox para alinear las imágenes horizontalmente */
-  align-items: center; /* Centra las imágenes verticalmente */
-  margin-left: auto;
-  margin-right: 5%; /* Empuja las imágenes completamente hacia la derecha */
-  gap: 10px; /* Espaciado entre las imágenes */
-}
-
-.header .images-container a {
-  display: flex;
-}
-
-.header .images-container img {
-  width: 40px; /* Ajusta el tamaño de las imágenes (puedes cambiar esto a lo que necesites) */
-  height: auto; /* Mantiene la proporción de las imágenes */
-  -o-object-fit: cover;
-     object-fit: cover; /* Asegura que las imágenes no se deformen */
-  margin-right: 5%;
 }/*# sourceMappingURL=header.component.css.map */

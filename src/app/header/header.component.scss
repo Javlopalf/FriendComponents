@@ -2,59 +2,104 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Asegura que padding y borde se incluyan en el tamaño total */
+  box-sizing: border-box;
 }
 
 /* Header */
 .header {
-  display: flex; /* Flexbox para distribuir los elementos */
-  justify-content: space-between; /* Espacio entre el logo, texto y las imágenes */
-  align-items: center; /* Centra verticalmente los elementos */
-  width: 100%; /* Ocupa el 100% del ancho */
-  background-color: #2F1893; /* Fondo del header */
-  padding: 0; /* Sin padding extra */
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos se ajusten en múltiples líneas si es necesario */
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #2F1893;
+  padding: 10px 20px;
 }
 
 /* Logo alineado a la izquierda */
 .header .logo {
-  display: flex; /* Flexbox para centrar el logo */
-  align-items: center; /* Centra el logo verticalmente */
+  display: flex;
+  align-items: center;
+  flex-shrink: 0; /* Evita que el logo se reduzca demasiado */
 }
 
 .header .logo img {
-  width: 20%; /* Ajusta el tamaño del logo */
-  height: auto; /* Mantiene la proporción del logo */
-  margin-left: 10px; /* Asegura que el logo no esté pegado al borde izquierdo */
+  width: 50px; /* Ajusta el tamaño del logo para pantallas más pequeñas */
+  height: 50px;
+  margin-right: 10px;
 }
 
 /* Texto centrado */
 .header .text-container {
-  flex-grow: 1; /* Ocupa el espacio restante entre el logo y las imágenes */
-  text-align: center; /* Centra el texto horizontalmente */
+  flex-grow: 1; /* Ocupa el espacio disponible */
+  text-align: center;
 }
 
-.header .text-container span {
-  color: white; /* Color del texto */
-  font-size: 28px; /* Tamaño del texto */
-  font-weight: bold; /* Hace el texto más visible */
+.header .text-container span a {
+  color: white;
+  font-size: 1.5rem; /* Usa unidades relativas para adaptarse a diferentes tamaños de pantalla */
+  font-weight: bold;
+  font-family: Georgia, serif;
+  text-decoration: none;
+  word-wrap: break-word; /* Permite dividir palabras largas si es necesario */
 }
 
-/* Alineación de las imágenes a la derecha */
+.header .text-container span a:hover {
+  cursor: pointer;
+}
+
+/* Iconos a la derecha */
 .header .images-container {
-  display: flex; /* Flexbox para alinear las imágenes horizontalmente */
-  align-items: center; /* Centra las imágenes verticalmente */
-  margin-left: auto;
-  margin-right: 5%; /* Empuja las imágenes completamente hacia la derecha */
-  gap: 10px; /* Espaciado entre las imágenes */
+  display: flex;
+  align-items: center;
+  gap: 50px; /* Reduce el espacio en pantallas más pequeñas */
 }
 
 .header .images-container a {
   display: flex;
+  align-items: center;
 }
 
-.header .images-container img {
-  width: 40px; /* Ajusta el tamaño de las imágenes (puedes cambiar esto a lo que necesites) */
-  height: auto; /* Mantiene la proporción de las imágenes */
-  object-fit: cover; /* Asegura que las imágenes no se deformen */
-  margin-right: 5%;
+.header .images-container img {  
+  width: 32x; /* Ajusta el tamaño en pantallas pequeñas */
+  height: 32px;
+  object-fit: cover;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column; /* Cambia la dirección a columna */
+    text-align: center; /* Centra el contenido */
+  }
+
+  .header .logo {
+    justify-content: center;
+    margin-bottom: 10px; /* Añade espacio entre los elementos */
+  }
+
+  .header .text-container {
+    font-size: 1.2rem; /* Reduce el tamaño del texto */
+  }
+
+  .header .images-container {
+    justify-content: center;
+    gap: 8px; /* Reduce el espacio entre iconos */
+  }
+
+  .header .images-container img {
+    width: 30px; /* Reduce el tamaño de los iconos */
+    height: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header .text-container span a {
+    font-size: 1rem; /* Reduce aún más el tamaño del texto */
+  }
+
+  .header .images-container img {
+    width: 25px;
+    height: 25px; /* Aún más pequeños para pantallas extra pequeñas */
+  }
 }

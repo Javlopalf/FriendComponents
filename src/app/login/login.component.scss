@@ -1,59 +1,98 @@
 /* Estilos para el formulario de Login */
+
+.wrapper {
+  min-height: 100vh; // Asegura que ocupe el 100% de la altura de la ventana
+  display: flex; // Activa el modelo flexbox
+  justify-content: center; // Centra horizontalmente
+  align-items: center; // Centra verticalmente
+  flex-direction: column; // Apila los elementos en columna
+}
+
 .form-container {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
-    margin: 50px auto;
-    text-align: center;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px; // Limita el ancho máximo en pantallas grandes
+  text-align: center;
+
+  @media (max-width: 768px) {
+    padding: 20px;
+    max-width: 90%; // Ajusta el ancho máximo en pantallas pequeñas
   }
-  
-  h2 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #333;
+
+  @media (max-width: 480px) {
+    padding: 15px;
+    max-width: 95%; // Reduce el ancho para dispositivos muy pequeños
   }
-  
-  .form-group {
-    margin-bottom: 15px;
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+
+  @media (max-width: 480px) {
+    font-size: 20px; // Ajusta el tamaño del texto en pantallas pequeñas
   }
-  
-  input {
-    width: 100%;
-    padding: 10px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-top: 5px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 5px;
+
+  @media (max-width: 480px) {
+    font-size: 13px; // Reduce ligeramente el tamaño de fuente
+    padding: 8px; // Ajusta el relleno
   }
-  
-  button {
-    width: 100%;
-    padding: 10px;
-    background-color: #2F1893;;
-    color: white;
-    border: none;
-    font-size: 16px;
-    border-radius: 4px;
-    cursor: pointer;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #2F1893;
+  color: white;
+  border: none;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+
+  @media (max-width: 480px) {
+    font-size: 14px; // Ajusta el tamaño de la fuente
+    padding: 8px; // Reduce ligeramente el relleno
   }
-  
-  button:hover {
-    background-color: #f03c7c;
+}
+
+button:hover {
+  background-color: #4B30A2;
+}
+
+p {
+  margin-top: 15px;
+
+  @media (max-width: 480px) {
+    font-size: 13px; // Ajusta el tamaño del texto del párrafo
   }
-  
-  p {
-    margin-top: 15px;
+}
+
+a {
+  color: #2F1893;
+  text-decoration: none;
+
+  @media (max-width: 480px) {
+    font-size: 13px; // Ajusta el tamaño de los enlaces
   }
-  
-  a {
-    color: #2F1893;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
-  
+}
+
+a:hover {
+  text-decoration: underline;
+}

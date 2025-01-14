@@ -10,8 +10,8 @@ import { CarritoComponent } from './carrito/carrito.component';
 import { ProductosComponent } from './productos/productos.component';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
-import { CarritoService } from './carritoService/carrito.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,15 +23,16 @@ import { ReactiveFormsModule } from '@angular/forms';
     ProductosComponent,
     LoginComponent,
     RegistroComponent,
-  
+
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     CommonModule,
     ReactiveFormsModule
   ],
-  providers: [CarritoService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

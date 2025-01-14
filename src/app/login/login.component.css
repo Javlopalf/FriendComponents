@@ -1,12 +1,12 @@
 /* Estilos para el formulario de Login */
+
 .form-container {
   background-color: #fff;
   padding: 30px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 400px;
-  margin: 50px auto;
+
   text-align: center;
 }
 
@@ -40,8 +40,7 @@ button {
   cursor: pointer;
 }
 
-button:hover {
-  background-color: #f03c7c;
+
 }
 
 p {

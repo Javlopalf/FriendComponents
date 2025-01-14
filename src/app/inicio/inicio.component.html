@@ -1,14 +1,31 @@
 <!-- categorias.component.html -->
-<div class="categorias-container">
-  <div *ngFor="let categoria of categorias" class="categoria">
-    <a [routerLink]="['/productos', categoria.nombre]" (click)="seleccionarCategoria(categoria.nombre)">
-      <div class="imagen">
-        <img [src]="categoria.imagen" [alt]="categoria.nombre" class="categoria-imagen" />
-      </div>
-      <p class="categoria-nombre">
-        {{ categoria.nombre }}
-      </p>
-    </a>
+<div class="wrapper">
+  <div class="introduction">
+    <h1 class="titulo"> Bienvenido a FriendComponents</h1>
+    <div class="informacion">
+      <p>Descubre nuestros productos tecnológicos de la más alta calidad.</p>
+      <p>Explora nuestras categorías y encuentra lo que necesitas para mejorar tu experiencia informática.</p>
+    </div>
+  </div>
+
+  <!-- Sección Sobre Nosotros -->
+  <div class="sobre-nosotros">
+    <h2 class="seccion-titulo">Sobre Nosotros</h2>
+    <p>En <b>FriendComponents</b> nos apasiona ofrecerte los mejores productos de tecnología para ayudarte a llevar tu
+      experiencia informática al siguiente nivel. Nos especializamos en ofrecer equipos de alta calidad y asesoramiento
+      experto para satisfacer todas tus necesidades tecnológicas.</p>
+    <p>Estamos comprometidos con la innovación, el servicio al cliente y la excelencia en todo lo que hacemos.</p>
+  </div>
+  <div class="categorias-container">
+    <div *ngFor="let categoria of categorias" class="categoria">
+      <a [routerLink]="['/productos', categoria.nombre]" (click)="seleccionarCategoria(categoria.nombre)">
+        <div class="imagen">
+          <img [src]="categoria.imagen" [alt]="categoria.nombre" [title]="categoria.fuente" class="categoria-imagen" />
+        </div>
+        <p class="categoria-nombre">
+          {{ categoria.nombre }}
+        </p>
+      </a>
+    </div>
   </div>
 </div>
-
