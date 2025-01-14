@@ -65,9 +65,9 @@ $fuente: Verdana, Geneva, Tahoma, sans-serif;
 .categorias-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
-  gap: 2rem;
+  gap: 5rem;
   /* Ajuste para espaciamiento */
-  padding: 5%;
+  padding: 7%;
   /* Reduzco el padding para mayor flexibilidad */
 }
 

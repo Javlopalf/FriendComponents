@@ -9,8 +9,7 @@ import { InicioService } from '../inicio/inicio.service';
 })
 export class InicioComponent {
   categorias = [
-    { nombre: 'Programas', imagen: '../../assets/images/windowsP.jpg', fuente:"https://pixabay.com/es/" },
-    { nombre: 'SSD', imagen: '../../assets/images/discoP.jpg',  fuente:"https://www.freepik.es/" },
+    { nombre: 'Programas', imagen: '../../assets/images/windowsP.jpg', fuente:"https://pixabay.com/es/" },   
     { nombre: 'Placas Bases', imagen: '../../assets/images/placabaseP.jpg', fuente:"https://www.freepik.es/"},
     { nombre: 'Ventiladores', imagen: '../../assets/images/ventilador2P.jpg' , fuente:"https://pixabay.com/es/"},
     { nombre: 'Procesadores', imagen: '../../assets/images/procesadorP.jpg', fuente:"https://www.freepik.es/" },
@@ -19,8 +18,7 @@ export class InicioComponent {
     { nombre: 'Refrigeración líquida', imagen: '../../assets/images/refrigeracionP.jpg', fuente:"https://www.freepik.es/" },
     { nombre: 'Fuentes de alimentación', imagen: '../../assets/images/fuente.jpg', fuente:"https://www.freepik.es/" },
     { nombre: 'Torres', imagen: '../../assets/images/torre17.jpg' , fuente:"https://www.freepik.es/"},
-    { nombre: 'Monitores', imagen: '../../assets/images/monitor.jpg', fuente:"https://pixabay.com/es/" },
-    { nombre: 'Foros', imagen: '../../assets/images/foro.jpg', fuente:"https://www.freepik.es/" }
+    { nombre: 'Monitores', imagen: '../../assets/images/monitor.jpg', fuente:"https://pixabay.com/es/" }    
   ];
 
   constructor(private router: Router, private inicioService: InicioService) {}

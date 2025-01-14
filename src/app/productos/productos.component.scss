@@ -137,9 +137,15 @@ $color-principal: #2F1893;
   text-transform: uppercase;
   letter-spacing: 1px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1200px) {
     text-align: center;
     font-size: 1.8em; /* Ajusta el tamaño de fuente para pantallas pequeñas */
+  }
+
+
+  @media (max-width: 768px) {
+    text-align: center;
+    font-size: 1.6em; /* Ajusta el tamaño de fuente para pantallas pequeñas */
   }
 }
 

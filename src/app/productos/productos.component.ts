@@ -62,7 +62,7 @@ export class ProductosComponent implements OnInit {
       ],
     },
     {
-      nombre: 'Placas Base',
+      nombre: 'Placas Bases',
       productos: [
         {
           nombre: 'ASUS ROG Strix B550-F',
@@ -88,7 +88,7 @@ export class ProductosComponent implements OnInit {
       ],
     },
     {
-      nombre: 'SSD',
+      nombre: 'Procesadores',
       productos: [
         {
           nombre: 'Samsung 970 EVO Plus',
@@ -268,33 +268,7 @@ export class ProductosComponent implements OnInit {
           imagen: '../../assets/images/productos/Monitor3.jpg',
         },
       ],
-    },
-    {
-      nombre: 'Foros',
-      productos: [
-        {
-          nombre: 'Foro de Hardware',
-          precio: 0.00,
-          valoracion: 4.9,
-          descripcion: 'Discusión sobre componentes y configuraciones',
-          imagen: '../../assets/images/productos/foro-hardware.jpg',
-        },
-        {
-          nombre: 'Foro de Software',
-          precio: 0.00,
-          valoracion: 4.8,
-          descripcion: 'Soporte y consejos sobre software',
-          imagen: '../../assets/images/productos/foro-software.jpg',
-        },
-        {
-          nombre: 'Foro de Gaming',
-          precio: 0.00,
-          valoracion: 4.7,
-          descripcion: 'Discusiones sobre juegos y configuraciones óptimas',
-          imagen: '../../assets/images/productos/foro-gaming.jpg',
-        },
-      ],
-    },
+    }    
   ];
   
 
