@@ -57,7 +57,7 @@ export class ProductosComponent implements OnInit {
           precio: 649.99,
           valoracion: 4.8,
           descripcion: 'Smartphone con cámara avanzada',
-          imagen: '../../assets/images/productos/xiaomi11.jpg',
+          imagen: '../../assets/images/productos/movil3.jpg',
         },
       ],
     },
@@ -83,7 +83,7 @@ export class ProductosComponent implements OnInit {
           precio: 169.99,
           valoracion: 4.5,
           descripcion: 'Compatible con PCIe 4.0',
-          imagen: '../../assets/images/productos/gigabyte.jpg',
+          imagen: '../../assets/images/productos/placaBase3.jpg',
         },
       ],
     },
@@ -268,9 +268,9 @@ export class ProductosComponent implements OnInit {
           imagen: '../../assets/images/productos/Monitor3.jpg',
         },
       ],
-    }    
+    }
   ];
-  
+
 
   categorias: any[] = [];
   productos: any[] = [];

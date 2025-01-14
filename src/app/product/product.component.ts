@@ -58,12 +58,12 @@ export class ProductComponent implements OnInit {
           precio: 649.99,
           valoracion: 4.8,
           descripcion: 'Smartphone con cámara avanzada',
-          imagen: '../../assets/images/productos/xiaomi11.jpg',
+          imagen: '../../assets/images/productos/movil3.jpg',
         },
       ],
     },
     {
-      nombre: 'Placas Base',
+      nombre: 'Placas Bases',
       productos: [
         {
           nombre: 'ASUS ROG Strix B550-F',
@@ -84,12 +84,12 @@ export class ProductComponent implements OnInit {
           precio: 169.99,
           valoracion: 4.5,
           descripcion: 'Compatible con PCIe 4.0',
-          imagen: '../../assets/images/productos/gigabyte.jpg',
+          imagen: '../../assets/images/productos/placaBase3.jpg',
         },
       ],
     },
     {
-      nombre: 'SSD',
+      nombre: 'Procesadores',
       productos: [
         {
           nombre: 'Samsung 970 EVO Plus',
@@ -269,33 +269,7 @@ export class ProductComponent implements OnInit {
           imagen: '../../assets/images/productos/Monitor3.jpg',
         },
       ],
-    },
-    {
-      nombre: 'Foros',
-      productos: [
-        {
-          nombre: 'Foro de Hardware',
-          precio: 0.00,
-          valoracion: 4.9,
-          descripcion: 'Discusión sobre componentes y configuraciones',
-          imagen: '../../assets/images/productos/foro-hardware.jpg',
-        },
-        {
-          nombre: 'Foro de Software',
-          precio: 0.00,
-          valoracion: 4.8,
-          descripcion: 'Soporte y consejos sobre software',
-          imagen: '../../assets/images/productos/foro-software.jpg',
-        },
-        {
-          nombre: 'Foro de Gaming',
-          precio: 0.00,
-          valoracion: 4.7,
-          descripcion: 'Discusiones sobre juegos y configuraciones óptimas',
-          imagen: '../../assets/images/productos/foro-gaming.jpg',
-        },
-      ],
-    },
+    }
   ];
 
   comentarios = [
