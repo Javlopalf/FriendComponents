@@ -20,6 +20,11 @@ $color-principal: #2F1893;
   width: 90%; /* Ajusta el ancho */
   margin: auto;
 
+  @media(max-width: 1200px){
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+
   @media (max-width: 768px) {
     margin-top: 2%;
     margin-bottom: 2%;
@@ -245,6 +250,13 @@ $color-principal: #2F1893;
     transform: scale(1.02);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
+
+  
+  @media(max-width: 1200px){
+    margin-top: 3%;
+    font-size: 0.8rem;
+  }
+
 
   @media (max-width: 768px) {
       margin-top: 3%;
