@@ -52,7 +52,7 @@
 .header .images-container {
   display: flex;
   align-items: center;
-  gap: 10px; /* Reduce el espacio en pantallas más pequeñas */
+  gap: 50px; /* Reduce el espacio en pantallas más pequeñas */
 }
 
 .header .images-container a {
@@ -60,7 +60,7 @@
   align-items: center;
 }
 
-.header .images-container img {
+.header .images-container img {  
   width: 40px; /* Ajusta el tamaño en pantallas pequeñas */
   height: 40px;
   object-fit: cover;
