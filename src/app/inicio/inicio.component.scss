@@ -13,7 +13,7 @@ $fuente: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .introduction {
-  margin-top: 4%;  
+  margin-top: 4%;
 }
 
 .titulo {
@@ -39,7 +39,7 @@ $fuente: Verdana, Geneva, Tahoma, sans-serif;
   background-color: #ffffff;
   padding: 3rem 2rem;
   margin-top: 2%;
-  border-radius: 10px;  
+  border-radius: 10px;
 }
 
 .seccion-titulo {
@@ -49,7 +49,7 @@ $fuente: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: bold;
   text-align: center;
   margin-bottom: 1rem;
-  font-weight: bold;  
+  font-weight: bold;
 }
 
 .sobre-nosotros p {
@@ -62,13 +62,23 @@ $fuente: Verdana, Geneva, Tahoma, sans-serif;
   line-height: 1.6;
 }
 
+.titulo-categorias{
+  font-family: $fuente;
+  font-size: 2.3rem;
+  color: $color-principal;
+  font-weight: bold;
+  text-align: center;
+  font-weight: bold;
+}
+
 .categorias-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
   gap: 5rem;
   /* Ajuste para espaciamiento */
-  padding: 7%;
+  padding: 3%;
   /* Reduzco el padding para mayor flexibilidad */
+
 }
 
 

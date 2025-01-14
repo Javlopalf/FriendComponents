@@ -16,6 +16,7 @@
       experto para satisfacer todas tus necesidades tecnológicas.</p>
     <p>Estamos comprometidos con la innovación, el servicio al cliente y la excelencia en todo lo que hacemos.</p>
   </div>
+  <h2 class="titulo-categorias">Categorías</h2>
   <div class="categorias-container">
     <div *ngFor="let categoria of categorias" class="categoria">
       <a [routerLink]="['/productos', categoria.nombre]" (click)="seleccionarCategoria(categoria.nombre)">
