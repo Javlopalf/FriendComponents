@@ -228,25 +228,14 @@ $color-principal: #2F1893;
   display: inline-block;
 }
 
-.btn.purchase {
+.btn.add-to-bag {
+  border: none;
   background-color: $color-principal;
   color: #fff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
-  &:hover {
-    background-color: #220e68;
-    transform: scale(1.02);
-    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.15);
-  }
-}
-
-.btn.add-to-bag {
-  background-color: #ddd;
-  color: #333;
   border: 1px solid #ccc;
 
   &:hover {
-    background-color: #bbb;
+    background-color: #220e68;
     transform: scale(1.02);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }

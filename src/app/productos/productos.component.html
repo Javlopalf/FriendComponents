@@ -15,7 +15,7 @@
       <h1>{{ categoriaSeleccionada }}</h1>
       <div *ngFor="let categoria of data">
         <div *ngIf="categoria.nombre === categoriaSeleccionada">
-          <div *ngFor="let producto of productos" class="product-card">
+          <div *ngFor="let producto of productos" class="product-card" [routerLink]="['/producto', producto.nombre]">
             <img [src]="producto.imagen" alt="{{ producto.nombre }}">
             <div class="product-info">
               <h3>{{ producto.nombre }}</h3>
@@ -24,8 +24,7 @@
                 <span class="price">{{ producto.precio | currency:'EUR' }}</span>
                 <span class="rating">{{ producto.valoracion }}<img src="../../assets/images/estrella.png"
                     alt="estrella" /> </span>
-              </div>
-              <button class="btn purchase">Comprar</button>
+              </div>              
               <button class="btn add-to-bag">Añadir al Carrito</button>
             </div>
           </div>
