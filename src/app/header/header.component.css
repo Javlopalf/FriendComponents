@@ -9,11 +9,6 @@
 /* Header */
 .header {
   display: flex; /* Flexbox para distribuir los elementos */
-  justify-content: space-between; /* Espacio entre el logo, texto y los iconos */
-  align-items: center; /* Centra verticalmente los elementos */
-  width: 100%; /* Ocupa el 100% del ancho */
-  background-color: #2F1893; /* Fondo del header */
-  padding: 10px 20px; /* Espaciado interno */
 }
 
 /* Logo alineado a la izquierda */
@@ -23,14 +18,10 @@
 }
 
 .header .logo img {
-  width: 60px; /* Ajusta el tamaño del logo */
-  height: 60px; /* Mantiene el tamaño cuadrado */
-  margin-right: 15px; /* Espaciado entre el logo y el borde */
 }
 
 /* Texto centrado */
 .header .text-container {
-  flex-grow: 1; /* Ocupa el espacio restante entre el logo y los iconos */
   text-align: center; /* Centra el texto horizontalmente */
 }
 
@@ -38,29 +29,5 @@
   color: white; /* Color del texto */
   font-size: 28px; /* Tamaño del texto */
   font-weight: bold; /* Hace el texto más visible */
-  font-family: Georgia, serif;
-  text-decoration: none;
-}
 
-.header .text-container span a:hover {
-  cursor: pointer;
-}
-
-/* Iconos a la derecha */
-.header .images-container {
-  display: flex; /* Flexbox para alinear los iconos horizontalmente */
-  align-items: center; /* Centra los iconos verticalmente */
-  gap: 20px; /* Espaciado entre los iconos */
-}
-
-.header .images-container a {
-  display: flex; /* Para centrar el contenido de los enlaces */
-  align-items: center; /* Centra verticalmente */
-}
-
-.header .images-container img {
-  width: 60px; /* Ajusta el tamaño al mismo que el logo */
-  height: 60px; /* Ajusta la altura para que sea igual al ancho */
-  -o-object-fit: cover;
-     object-fit: cover; /* Asegura que los iconos no se deformen */
 }/*# sourceMappingURL=header.component.css.map */
