@@ -6,64 +6,6 @@ $color-secundario:#FFFFFF;
     box-sizing: border-box;
     margin-bottom: 0 !important;
 
-<<<<<<< Updated upstream
-=======
-.footer {  
-  width: 100%;
-  margin-top: auto;
-  background-color: $color-principal;
-  color: $color-secundario;
-  padding: 1em; 
-  display: flex;
-  flex-direction: column;
-  bottom: 0;
-  position: relative;  
-  
-
-  footer {
-    display: flex;
-    justify-content:space-between; 
-    align-items: center;
-    gap: 2em; 
-    width: 100%;    
-    flex-wrap: wrap; 
-    .col {
-      flex: 1; 
-      
-
-      h5 {
-        text-align: center;
-        font-weight: bold;
-        font-size: 1.2em;
-        margin-bottom: 1em;
-        color: $color-secundario;
-      }
-
-      ul {
-        text-align: center;
-        list-style: none;
-        padding: 0;
-
-        li {
-          margin-bottom: 0.5em;
-
-          .nav-link {
-            color: $color-secundario !important;
-            font-size: 1em;
-
-            &:hover {
-              color: $text-color-secondary;
-            }
-          }
-        }
-      }
-    }
-    img{
-      width: 200px;
-      margin-bottom: 5px;
-    }
-  }
->>>>>>> Stashed changes
 }
 .footer{
     display: grid;
