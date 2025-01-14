@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-product',
@@ -317,20 +318,30 @@ export class ProductComponent implements OnInit {
       nota: 3,
     },
   ];
-  
-  
 
-  producto: any;
 
-  constructor(private route: ActivatedRoute) {}
+
+  producto: any;  // Producto actual seleccionado
+  comentarioForm!: FormGroup;  // Formulario reactivo para comentarios
+
+  constructor(private route: ActivatedRoute, private fb: FormBuilder) {}
 
   ngOnInit(): void {
+    // Obtener el nombre del producto desde la ruta activa
     const nombreProducto = this.route.snapshot.paramMap.get('nombre');
     if (nombreProducto) {
       this.producto = this.buscarProducto(nombreProducto);
     }
+
+    // Inicializar el formulario reactivo
+    this.comentarioForm = this.fb.group({
+      persona: ['', [Validators.required]],
+      mensaje: ['', [Validators.required]],
+      nota: [1, [Validators.required]]
+    });
   }
 
+  // Método para buscar el producto
   buscarProducto(nombre: string): any {
     for (const categoria of this.data) {
       const producto = categoria.productos.find(p => p.nombre === nombre);
@@ -340,4 +351,21 @@ export class ProductComponent implements OnInit {
     }
     return null;
   }
+
+  // Método para agregar un comentario
+  agregarComentario(): void {
+    if (this.comentarioForm.valid) {
+      const nuevoComentario = this.comentarioForm.value;
+      nuevoComentario.fecha = new Date().toLocaleDateString();
+      this.comentarios.push(nuevoComentario);
+      this.comentarioForm.reset();
+    }
+  }
+
+  // Método para agregar un producto al carrito
+  agregarAlCarrito(): void {
+    alert('¡Producto añadido al carrito!');
+  }
+
+
 }

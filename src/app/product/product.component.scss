@@ -1,3 +1,4 @@
+
 .product-details {
     min-height: 90vh;
     margin-left: 20%;
@@ -5,80 +6,81 @@
     margin-top: 3%;
     margin-bottom: 3%;
     padding: 2rem;
-    max-width: 1200px;    
+    max-width: 1200px;
     background-color: #ffffff;
-    border-radius: 8px;    
-  
+    border-radius: 8px;
+
     h1 {
       font-size: 2.5rem;
       text-align: center;
       margin-bottom: 2rem;
       color: #333;
     }
-  
+
     .product-container {
-     margin-bottom: 2%;
+      margin-bottom: 2%;
       display: flex;
       flex-wrap: wrap;
       gap: 2rem;
-  
+
       .product-image {
         flex: 1;
         max-width: 400px;
-  
+
         img {
           width: 100%;
-          border-radius: 8px;          
+          border-radius: 8px;
         }
       }
-  
+
       .product-info {
+
         flex: 2;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-  
+
         h2 {
           font-size: 2rem;
           color: #000000;
           margin-bottom: 1rem;
         }
-  
+
         .description {
           font-size: 1.2rem;
           color: #000000;
           margin-bottom: 1.5rem;
           line-height: 1.6;
         }
-  
+
         .price {
           font-size: 1.5rem;
           color: #2F1893;
           margin-bottom: 1rem;
-  
+
           strong {
             font-weight: bold;
             color: #2F1893;
           }
         }
-  
+
         .rating {
           display: flex;
           align-items: center;
           gap: 0.5rem;
           font-size: 1.2rem;
           color: #f8b305;
-  
+
           img {
             width: 1.5rem;
             height: auto;
           }
         }
-  
+
         .actions {
           display: flex;
           gap: 1rem;
-  
+
           .btn {
             padding: 0.75rem 1.5rem;
             font-size: 1.1rem;
@@ -86,11 +88,11 @@
             border-radius: 5px;
             cursor: pointer;
             transition: all 0.3s ease;
-  
+
             &.add-to-cart {
               color: #ffffff;
               background-color: #2F1893;
-  
+
               &:hover {
                 background-color: #220e68;
                 transform: scale(1.02);
@@ -101,14 +103,16 @@
         }
       }
     }
-      
+
     .forum-section {
       margin-top: 3rem;
       background-color: #ffffff;
       padding: 2rem;
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  
+
+
+
       h2 {
         font-size: 1.8rem;
         margin-bottom: 1.5rem;
@@ -125,59 +129,103 @@
         color: #ffffff;
         background-color: #2F1893;
       }
-  
+
       .forum-post {
         padding: 1.5rem;
         border-bottom: 1px solid #e0e0e0;
-  
+
         &:last-child {
           border-bottom: none;
         }
-  
+
         .comment-text {
           font-size: 1.2rem;
           color: #050505;
           margin-bottom: 0.8rem;
           line-height: 1.5;
         }
-  
+
         .comment-meta {
           display: flex;
           gap: 1rem;
           font-size: 0.9rem;
           color: #494747;
-  
+
           .comment-author {
             font-weight: bold;
           }
-  
+
           .comment-rating {
             font-size: 1rem;
             color: #ffb700;
           }
         }
       }
-  
-      // Botón para agregar comentarios
-      .add-comment-btn {
-        margin-top: 2rem;
-        display: inline-block;
-        padding: 0.75rem 1.5rem;
-        font-size: 1.1rem;
-        color: #ffffff;
-        background-color: #2F1893;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-  
-        &:hover {
-          background-color: #220e68;
-          transform: scale(1.02);
-          box-shadow: 0 8px 10px rgba(0, 0, 0, 0.15);
+      h2 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+
+        input, textarea, select {
+          width: 100%;
+          padding: 10px;
+          font-size: 1rem;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          background-color: #f9f9f9;
+        }
+
+        input[type="text"], textarea {
+          resize: vertical;
+        }
+
+        textarea {
+          height: 100px;
+        }
+
+        label {
+          font-size: 1rem;
+          margin-bottom: 5px;
+          display: block;
+        }
+
+        .error {
+          color: red;
+          font-size: 0.875rem;
+          margin-top: 5px;
+
+          small {
+            display: block;
+          }
         }
       }
+
+      button[type="submit"] {
+        background-color: #2F1893;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1rem;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: #280ba8;
+        }
+
+        &:disabled {
+          background-color: #cccccc;
+          cursor: not-allowed;
+        }
+      }
+
+
     }
+
 
     @media (min-width: 768px) {
         .product-container {
@@ -185,32 +233,32 @@
             flex: 1;
             max-width: 50%; // Ocupa la mitad del ancho en pantallas medianas
           }
-    
+
           .product-info {
             flex: 1;
           }
         }
-    
+
         .forum-section {
           padding: 2rem;
         }
       }
-    
+
       @media (min-width: 1024px) {
         width: 60%; // Ajusta el ancho para pantallas grandes
         margin: 3% auto;
-    
+
         .product-container {
           .product-image {
             max-width: 40%; // Reduce el espacio ocupado por la imagen
           }
-    
+
           .product-info {
             flex: 2;
           }
         }
       }
     }
-  
-  
-  
+
+
+
