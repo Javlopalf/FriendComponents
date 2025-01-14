@@ -1,11 +1,8 @@
+
 .footer {
   margin-top: auto;
   background-color: #2F1893;
   color: #FFFFFF;
-  padding: 1em;
-  display: flex;
-  flex-direction: column;
-  bottom: 0;
   position: relative;
   width: 100%;
 }

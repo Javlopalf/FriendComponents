@@ -1,11 +1,4 @@
 /* Estilos para el formulario de Login */
-.wrapper {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
 
 .form-container {
   background-color: #fff;
@@ -13,7 +6,7 @@
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 40%;
+
   text-align: center;
 }
 
@@ -47,8 +40,7 @@ button {
   cursor: pointer;
 }
 
-button:hover {
-  background-color: #4B30A2;
+
 }
 
 p {
