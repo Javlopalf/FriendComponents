@@ -16,7 +16,7 @@
       <div *ngFor="let categoria of data">
         <div *ngIf="categoria.nombre === categoriaSeleccionada">
           <div *ngFor="let producto of productos" class="product-card" [routerLink]="['/producto', producto.nombre]">
-            <img [src]="producto.imagen" alt="{{ producto.nombre }}">
+            <img [src]="producto.imagen" alt="{{ producto.nombre }}" title="{{producto.nombre}}">
             <div class="product-info">
               <h3>{{ producto.nombre }}</h3>
               <p>{{ producto.descripcion }}</p>
