@@ -5,7 +5,7 @@
 
       <div class="producto-info">
         <div class="producto-imagen">
-          <img src="{{producto.imagen}}" alt="producto">
+          <img src="{{producto.imagen}}" alt="{{producto.nombre}}" title="={{producto.nombre}}">
         </div>
         <span>{{ producto.nombre }}</span>
         <span>{{ producto.precio | currency:'EUR' }}</span>
