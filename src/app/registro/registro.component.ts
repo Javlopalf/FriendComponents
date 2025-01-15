@@ -33,7 +33,6 @@ export class RegistroComponent {
     return (formGroup: FormGroup) => {
       const passControl = formGroup.controls[password];
       const confirmPassControl = formGroup.controls[confirmPassword];
-
       if (confirmPassControl.errors && !confirmPassControl.errors['passwordMismatch']) {
         return;
       }
@@ -48,15 +47,19 @@ export class RegistroComponent {
 
   onSubmit() {
     this.submitted = true;
-
+  
+    // Detener si el formulario no es válido
     if (this.registerForm.invalid) {
-      return; // Detener si el formulario no es válido
+      return;
     }
-
-    // Limpiar el formulario y mostrar mensaje
-    this.registerForm.reset();
+  
+    // Si el formulario es válido, procesar los datos
     console.log('Formulario válido:', this.registerForm.value);
-    alert("Registrado Correctamente");
+    alert('Registrado Correctamente');
+    
+    // Reiniciar el formulario
+    this.registerForm.reset();
+    this.submitted = false; // Resetear el estado de envío
   }
 
   // Getter para simplificar el acceso a los controles del formulario
