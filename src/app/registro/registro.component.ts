@@ -10,6 +10,8 @@ export class RegistroComponent {
   registerForm: FormGroup;
   submitted = false;
 
+
+  //Validador de Formulario
   constructor(private formBuilder: FormBuilder) {
     this.registerForm = this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(3)]],
@@ -45,6 +47,7 @@ export class RegistroComponent {
     };
   }
 
+  //Al completar el formulario indica al usuario si esta bien cumplimentada la informacion
   onSubmit() {
     this.submitted = true;
   
