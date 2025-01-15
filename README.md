@@ -15,6 +15,7 @@ de los fabricantes y mayoristas, y revenderlos sin ninguna restricción.
 # Como abrir
 Es necesario tener instalado Visual Studio Code, una vez descargado o clonado el proyecto para poder editarlo o ejecutarlo es necesario ejecutar los siguientes comandos:
 >npm install
+
 >npm install bootstrap
 
 #Estructura del poyecto
