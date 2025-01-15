@@ -18,4 +18,4 @@ Es necesario tener instalado Visual Studio Code, una vez descargado o clonado el
 
 >npm install bootstrap
 
-#Estructura del poyecto
+# Estructura del poyecto
