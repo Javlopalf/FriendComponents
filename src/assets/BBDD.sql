@@ -59,15 +59,6 @@ CREATE TABLE Productos_Carrito (
     FOREIGN KEY (producto_id) REFERENCES Productos(id) ON DELETE CASCADE
 );
 
-
--- Elimina las tablas en el orden que prefieras, ya que las restricciones están desactivadas
-DROP TABLE IF EXISTS Productos_Carrito;
-DROP TABLE IF EXISTS Carrito;
-DROP TABLE IF EXISTS Opiniones;
-DROP TABLE IF EXISTS Productos;
-DROP TABLE IF EXISTS Categorias;
-DROP TABLE IF EXISTS Usuarios;
-
 -- Insertar categorías
 INSERT INTO Categorias (nombre, imagen, descripcion) VALUES
 ('Programas', 'ruta/imagen/programas.jpg', 'Categoría de software y licencias'),
@@ -233,3 +224,11 @@ INSERT INTO Opiniones (producto_id, nombre, comentario, valoracion) VALUES
 (29, 'Pedro Martínez', 'La frecuencia de actualización es excelente, aunque el precio es alto.', 4),
 (30, 'Maria López', 'Un monitor muy bueno para trabajos gráficos, pero la pantalla curva no es de mi gusto.', 3),
 (30, 'Carlos García', 'Buen monitor para la oficina, pero la calidad de la pantalla podría mejorar.', 4);
+
+-- Elimina las tablas en el orden que prefieras, ya que las restricciones están desactivadas
+DROP TABLE IF EXISTS Productos_Carrito;
+DROP TABLE IF EXISTS Carrito;
+DROP TABLE IF EXISTS Opiniones;
+DROP TABLE IF EXISTS Productos;
+DROP TABLE IF EXISTS Categorias;
+DROP TABLE IF EXISTS Usuarios;
