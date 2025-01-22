@@ -142,3 +142,94 @@ INSERT INTO Productos (nombre, descripcion, precio, valoracion, imagen, categori
 ('Dell UltraSharp U2723QE', 'Monitor 4K UHD de 27 pulgadas', 649.99, 4.9, '../../assets/images/productos/Monitor1.jpg', 10),
 ('LG 27GN950-B', 'Monitor gaming 4K con 144Hz', 749.99, 4.8, '../../assets/images/productos/Monitor2.jpg', 10),
 ('AOC C24G1A', 'Monitor curvo Full HD de 24 pulgadas', 199.99, 4.7, '../../assets/images/productos/Monitor3.jpg', 10);
+
+
+-- Insertar usuarios
+INSERT INTO Usuarios (nombre, correo, contrasenia, creado_en) VALUES
+('Juan Pérez', 'juan.perez@example.com', 'contraseña123', NOW()),
+('Maria López', 'maria.lopez@example.com', 'contraseña456', NOW()),
+('Carlos García', 'carlos.garcia@example.com', 'contraseña789', NOW()),
+('Ana Fernández', 'ana.fernandez@example.com', 'contraseña101', NOW()),
+('Pedro Martínez', 'pedro.martinez@example.com', 'contraseña112', NOW());
+
+
+-- Insertar opiniones para los productos de la categoría 'Programas'
+INSERT INTO Opiniones (producto_id, nombre, comentario, valoracion) VALUES
+(1, 'Juan Pérez', 'Excelente sistema operativo, muy estable y rápido.', 5),
+(1, 'Carlos García', 'Buen rendimiento, aunque el precio es alto.', 4),
+(2, 'Ana Fernández', 'Perfecto para servidores, fácil de instalar.', 5),
+(2, 'Pedro Martínez', 'Requiere mucha configuración, pero funciona bien.', 4),
+(3, 'Maria López', 'Buen sistema operativo, aunque algo antiguo.', 3),
+(3, 'Carlos García', 'Cumple su función, pero podría ser más rápido.', 4),
+
+-- Insertar opiniones para los productos de la categoría 'Móviles'
+(4, 'Juan Pérez', 'Gran smartphone, la cámara es impresionante.', 5),
+(4, 'Pedro Martínez', 'Buena calidad, pero el precio es elevado.', 4),
+(5, 'Carlos García', 'El mejor iPhone que he tenido, la cámara es increíble.', 5),
+(5, 'Ana Fernández', 'Muy caro, pero la calidad es innegable.', 4),
+(6, 'Maria López', 'Buen rendimiento y excelente cámara, pero la pantalla es pequeña.', 4),
+(6, 'Pedro Martínez', 'Muy buen teléfono, pero la batería podría durar más.', 4),
+
+-- Insertar opiniones para los productos de la categoría 'Placas Bases'
+(7, 'Juan Pérez', 'Excelente para jugar y trabajar, compatible con todos los procesadores AMD.', 5),
+(7, 'Carlos García', 'Placa base de calidad, pero algo cara.', 4),
+(8, 'Ana Fernández', 'Placa base sólida, perfecta para procesadores Intel.', 5),
+(8, 'Pedro Martínez', 'Buen rendimiento, pero las opciones de expansión son limitadas.', 4),
+(9, 'Maria López', 'Buena placa, pero no es compatible con algunos dispositivos nuevos.', 3),
+(9, 'Carlos García', 'Cumple su función, pero el precio podría ser más competitivo.', 4),
+
+-- Insertar opiniones para los productos de la categoría 'Procesadores'
+(10, 'Juan Pérez', 'Excelente rendimiento y velocidad, ideal para gaming.', 5),
+(10, 'Pedro Martínez', 'Rendimiento espectacular, pero un poco caro.', 4),
+(11, 'Carlos García', 'Buen rendimiento, pero no se nota mucha diferencia con modelos anteriores.', 3),
+(11, 'Ana Fernández', 'Muy buena opción para sistemas de trabajo, muy rápido.', 4),
+(12, 'Maria López', 'Rendimiento top, aunque necesita una placa base compatible.', 5),
+(12, 'Pedro Martínez', 'Muy buen procesador, pero el precio es un poco alto.', 4),
+
+-- Insertar opiniones para los productos de la categoría 'Ventiladores'
+(13, 'Juan Pérez', 'Muy eficiente para mantener mi PC frío, fácil de instalar.', 5),
+(13, 'Carlos García', 'Buen ventilador, aunque es un poco ruidoso.', 4),
+(14, 'Ana Fernández', 'Increíble disipación de calor, lo recomiendo para sistemas de alto rendimiento.', 5),
+(14, 'Pedro Martínez', 'Excelente disipador, aunque el tamaño es grande.', 4),
+(15, 'Maria López', 'Buen ventilador, aunque no es tan silencioso como esperaba.', 3),
+(15, 'Carlos García', 'Muy bueno, pero podría ser más barato.', 4),
+
+-- Insertar opiniones para los productos de la categoría 'Memoria RAM'
+(16, 'Juan Pérez', 'Gran memoria, mejora considerablemente el rendimiento del sistema.', 5),
+(16, 'Pedro Martínez', 'Buen precio, pero hay opciones con mayor capacidad.', 4),
+(17, 'Carlos García', 'Perfecta para juegos y multitarea, la iluminación RGB es genial.', 5),
+(17, 'Ana Fernández', 'Mejor memoria que he probado, vale la pena el precio.', 4),
+(18, 'Maria López', 'Memoria de calidad, pero un poco más lenta que otras opciones de la competencia.', 3),
+(18, 'Pedro Martínez', 'Buena opción por el precio, aunque podría ser más rápida.', 4),
+
+-- Insertar opiniones para los productos de la categoría 'Refrigeración líquida'
+(19, 'Juan Pérez', 'Refrigeración excelente, mantiene el CPU a temperaturas bajas todo el tiempo.', 5),
+(19, 'Carlos García', 'Muy eficiente, pero el precio es bastante elevado.', 4),
+(20, 'Ana Fernández', 'Refrigeración líquida de alto rendimiento, fácil de instalar.', 5),
+(20, 'Pedro Martínez', 'Es muy silenciosa, aunque un poco cara para lo que ofrece.', 4),
+(21, 'Maria López', 'Buena opción para refrigerar, pero la instalación es algo complicada.', 3),
+(21, 'Carlos García', 'Excelente relación calidad-precio, muy recomendable.', 4),
+
+-- Insertar opiniones para los productos de la categoría 'Fuentes de alimentación'
+(22, 'Juan Pérez', 'Muy buena fuente de alimentación, segura y con gran capacidad.', 5),
+(22, 'Carlos García', 'Muy buena, pero algo cara en comparación con otras marcas.', 4),
+(23, 'Ana Fernández', 'Fuente potente y eficiente, ideal para PC gaming.', 5),
+(23, 'Pedro Martínez', 'Buen rendimiento, pero la gestión de cables podría mejorar.', 4),
+(24, 'Maria López', 'Suficiente para sistemas básicos, pero podría tener más potencia.', 3),
+(24, 'Carlos García', 'Buen rendimiento, aunque se puede encontrar algo más barato.', 4),
+
+-- Insertar opiniones para los productos de la categoría 'Torres'
+(25, 'Juan Pérez', 'Estéticamente bonita, buen espacio para componentes.', 5),
+(25, 'Carlos García', 'Buen diseño, pero los cables podrían estar mejor organizados.', 4),
+(26, 'Ana Fernández', 'Gran caja, con mucho espacio y una excelente ventilación.', 5),
+(26, 'Pedro Martínez', 'Buen precio, pero el montaje es complicado.', 4),
+(27, 'Maria López', 'Caja económica, pero no tiene tantas opciones de expansión.', 3),
+(27, 'Carlos García', 'Cumple su función, aunque podría mejorar el flujo de aire.', 4),
+
+-- Insertar opiniones para los productos de la categoría 'Monitores'
+(28, 'Juan Pérez', 'Excelente monitor 4K, ideal para trabajar y jugar.', 5),
+(28, 'Carlos García', 'La resolución es increíble, pero la tasa de refresco podría ser mejor.', 4),
+(29, 'Ana Fernández', 'Un monitor impresionante para gaming, la calidad de la imagen es asombrosa.', 5),
+(29, 'Pedro Martínez', 'La frecuencia de actualización es excelente, aunque el precio es alto.', 4),
+(30, 'Maria López', 'Un monitor muy bueno para trabajos gráficos, pero la pantalla curva no es de mi gusto.', 3),
+(30, 'Carlos García', 'Buen monitor para la oficina, pero la calidad de la pantalla podría mejorar.', 4);
