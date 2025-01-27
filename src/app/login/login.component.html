@@ -2,7 +2,8 @@
   <div class="form-container login">
     <h2>Iniciar sesión</h2>
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-      <div class="form-group">        
+      <div class="form-group"> 
+        <label class="form-subtitle"> Correo electrónico </label>       
         <input type="email" formControlName="email" placeholder="Correo electrónico" required>
         <div *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid" class="error">
           <small *ngIf="loginForm.get('email')?.errors?.['required']">El correo es obligatorio.</small>
@@ -10,6 +11,7 @@
         </div>
       </div>
       <div class="form-group">
+        <label class="form-subtitle"> Contraseña </label>   
         <input type="password" formControlName="password" placeholder="Contraseña" required>
         <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid" class="error">
           <small *ngIf="loginForm.get('password')?.errors?.['required']">La contraseña es obligatoria.</small>

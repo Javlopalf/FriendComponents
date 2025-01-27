@@ -3,6 +3,7 @@
     <h2>Registrarse</h2>
     <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
+        <label class="form-label">Nombre Completo</label>
         <input type="text" formControlName="name" placeholder="Nombre completo">
         <div *ngIf="submitted && f['name'].errors" class="error">
           <small *ngIf="f['name'].errors?.['required']">El nombre es obligatorio.</small>
@@ -10,6 +11,7 @@
         </div>
       </div>
       <div class="form-group">
+        <label class="form-label">Correo electrónico</label>
         <input type="email" formControlName="email" placeholder="Correo electrónico">
         <div *ngIf="submitted && f['email'].errors" class="error">
           <small *ngIf="f['email'].errors?.['required']">El correo es obligatorio.</small>
@@ -17,6 +19,7 @@
         </div>
       </div>
       <div class="form-group">
+        <label class="form-label">Contraseña</label>
         <input type="password" formControlName="password" placeholder="Contraseña">
         <div *ngIf="submitted && f['password'].errors" class="error">
           <small *ngIf="f['password'].errors?.['required']">La contraseña es obligatoria.</small>
@@ -25,6 +28,7 @@
         </div>
       </div>
       <div class="form-group">
+        <label class="form-label">Confirmar Contraseña</label>
         <input type="password" formControlName="confirmPassword" placeholder="Confirmar contraseña">
         <div *ngIf="submitted && f['confirmPassword'].errors" class="error">
           <small *ngIf="f['confirmPassword'].errors?.['required']">La confirmación es obligatoria.</small>
