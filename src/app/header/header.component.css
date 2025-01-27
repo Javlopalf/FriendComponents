@@ -3,31 +3,99 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Asegura que padding y borde se incluyan en el tamaño total */
+  box-sizing: border-box;
 }
 
 /* Header */
 .header {
-  display: flex; /* Flexbox para distribuir los elementos */
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos se ajusten en múltiples líneas si es necesario */
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #2F1893;
+  padding: 10px 20px;
 }
 
 /* Logo alineado a la izquierda */
 .header .logo {
-  display: flex; /* Flexbox para centrar el logo */
-  align-items: center; /* Centra el logo verticalmente */
+  display: flex;
+  align-items: center;
+  flex-shrink: 0; /* Evita que el logo se reduzca demasiado */
 }
 
 .header .logo img {
+  width: 50px; /* Ajusta el tamaño del logo para pantallas más pequeñas */
+  height: 50px;
+  margin-right: 10px;
 }
 
 /* Texto centrado */
 .header .text-container {
-  text-align: center; /* Centra el texto horizontalmente */
+  flex-grow: 1; /* Ocupa el espacio disponible */
+  text-align: center;
 }
 
 .header .text-container span a {
-  color: white; /* Color del texto */
-  font-size: 28px; /* Tamaño del texto */
-  font-weight: bold; /* Hace el texto más visible */
+  color: white;
+  font-size: 1.5rem; /* Usa unidades relativas para adaptarse a diferentes tamaños de pantalla */
+  font-weight: bold;
+  font-family: Georgia, serif;
+  text-decoration: none;
+  word-wrap: break-word; /* Permite dividir palabras largas si es necesario */
+}
 
+.header .text-container span a:hover {
+  cursor: pointer;
+}
+
+/* Iconos a la derecha */
+.header .images-container {
+  display: flex;
+  align-items: center;
+  gap: 50px; /* Reduce el espacio en pantallas más pequeñas */
+}
+
+.header .images-container a {
+  display: flex;
+  align-items: center;
+}
+
+.header .images-container img {
+  width: 32x; /* Ajusta el tamaño en pantallas pequeñas */
+  height: 32px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column; /* Cambia la dirección a columna */
+    text-align: center; /* Centra el contenido */
+  }
+  .header .logo {
+    justify-content: center;
+    margin-bottom: 10px; /* Añade espacio entre los elementos */
+  }
+  .header .text-container {
+    font-size: 1.2rem; /* Reduce el tamaño del texto */
+  }
+  .header .images-container {
+    justify-content: center;
+    gap: 8px; /* Reduce el espacio entre iconos */
+  }
+  .header .images-container img {
+    width: 30px; /* Reduce el tamaño de los iconos */
+    height: 30px;
+  }
+}
+@media (max-width: 480px) {
+  .header .text-container span a {
+    font-size: 1rem; /* Reduce aún más el tamaño del texto */
+  }
+  .header .images-container img {
+    width: 25px;
+    height: 25px; /* Aún más pequeños para pantallas extra pequeñas */
+  }
 }/*# sourceMappingURL=header.component.css.map */

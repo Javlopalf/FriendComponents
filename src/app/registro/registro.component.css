@@ -1,4 +1,11 @@
 /* Estilos para el formulario de Registro */
+.wrapper {
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 
 .form-container {
   background-color: #fff;
@@ -19,6 +26,10 @@ h2 {
 
 .form-group {
   margin-bottom: 15px;
+  text-align: justify;
+}
+.form-group .form-label {
+  color: #000000;
 }
 
 input {
@@ -42,7 +53,7 @@ button {
 }
 
 button:hover {
-
+  background-color: #4B30A2;
 }
 
 p {

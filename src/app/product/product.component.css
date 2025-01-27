@@ -1,0 +1,215 @@
+.product-details {
+  min-height: 90vh;
+  margin-left: 20%;
+  width: 60%;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  padding: 2rem;
+  max-width: 1200px;
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+.product-details h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333;
+}
+.product-details .product-container {
+  margin-bottom: 2%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.product-details .product-container .product-image {
+  flex: 1;
+  max-width: 400px;
+}
+.product-details .product-container .product-image img {
+  width: 100%;
+  border-radius: 8px;
+}
+.product-details .product-container .product-info {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.product-details .product-container .product-info h2 {
+  font-size: 2rem;
+  color: #000000;
+  margin-bottom: 1rem;
+}
+.product-details .product-container .product-info .description {
+  font-size: 1.2rem;
+  color: #000000;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+.product-details .product-container .product-info .price {
+  font-size: 1.5rem;
+  color: #2F1893;
+  margin-bottom: 1rem;
+}
+.product-details .product-container .product-info .price strong {
+  font-weight: bold;
+  color: #2F1893;
+}
+.product-details .product-container .product-info .rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+  color: #000000;
+}
+.product-details .product-container .product-info .rating img {
+  width: 1.5rem;
+  height: auto;
+}
+.product-details .product-container .product-info .actions {
+  display: flex;
+  gap: 1rem;
+}
+.product-details .product-container .product-info .actions .btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.product-details .product-container .product-info .actions .btn.add-to-cart {
+  color: #ffffff;
+  background-color: #2F1893;
+}
+.product-details .product-container .product-info .actions .btn.add-to-cart:hover {
+  background-color: #220e68;
+  transform: scale(1.02);
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.15);
+}
+.product-details .forum-section {
+  margin-top: 3rem;
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.product-details .forum-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #2F1893;
+}
+.product-details .forum-section .aniadirOp {
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #ffffff;
+  background-color: #2F1893;
+}
+.product-details .forum-section .forum-post {
+  padding: 1.5rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+.product-details .forum-section .forum-post:last-child {
+  border-bottom: none;
+}
+.product-details .forum-section .forum-post .comment-text {
+  font-size: 1.2rem;
+  color: #050505;
+  margin-bottom: 0.8rem;
+  line-height: 1.5;
+}
+.product-details .forum-section .forum-post .comment-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: #494747;
+}
+.product-details .forum-section .forum-post .comment-meta .comment-author {
+  font-weight: bold;
+}
+.product-details .forum-section .forum-post .comment-meta .comment-rating {
+  font-size: 1rem;
+  color: #000000;
+  display: flex;
+  align-items: center;
+}
+.product-details .forum-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+.product-details .forum-section .form-group {
+  margin-top: 2rem;
+  margin-bottom: 15px;
+}
+.product-details .forum-section .form-group input, .product-details .forum-section .form-group textarea, .product-details .forum-section .form-group select {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #ffffff;
+}
+.product-details .forum-section .form-group input[type=text], .product-details .forum-section .form-group textarea {
+  resize: vertical;
+}
+.product-details .forum-section .form-group textarea {
+  height: 100px;
+}
+.product-details .forum-section .form-group label {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  display: block;
+}
+.product-details .forum-section .form-group .error {
+  color: red;
+  font-size: 1.2rem;
+  margin-top: 5px;
+}
+.product-details .forum-section .form-group .error small {
+  display: block;
+}
+.product-details .forum-section button[type=submit] {
+  background-color: #2F1893;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.product-details .forum-section button[type=submit]:hover {
+  background-color: #280ba8;
+}
+.product-details .forum-section button[type=submit]:disabled {
+  background-color: #3f3b3b;
+  cursor: not-allowed;
+}
+@media (min-width: 768px) {
+  .product-details .product-container .product-image {
+    flex: 1;
+    max-width: 50%;
+  }
+  .product-details .product-container .product-info {
+    flex: 1;
+  }
+  .product-details .forum-section {
+    padding: 2rem;
+  }
+}
+@media (min-width: 1024px) {
+  .product-details {
+    width: 60%;
+    margin: 3% auto;
+  }
+  .product-details .product-container .product-image {
+    max-width: 40%;
+  }
+  .product-details .product-container .product-info {
+    flex: 2;
+  }
+}/*# sourceMappingURL=product.component.css.map */

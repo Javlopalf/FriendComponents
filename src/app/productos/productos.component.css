@@ -1,5 +1,4 @@
 @charset "UTF-8";
-/* Contenedor principal */
 .wrapper {
   min-height: 100vh;
   display: flex;
@@ -9,16 +8,30 @@
 }
 
 .container {
-  margin-top: 2%;
-  margin-bottom: 2%;
   display: grid;
   grid-template-columns: 300px 1fr; /* Sidebar y contenido principal */
   gap: 20px;
   padding: 20px;
   font-family: "Arial", sans-serif;
-  background: linear-gradient(123deg, #ffffff 0%, #2F1893 100%); /* Gradiente de colores */
+  background: linear-gradient(123deg, #ffffff 0%, #2F1893 100%);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 90%; /* Ajusta el ancho */
+  margin: auto;
+}
+@media (max-width: 1200px) {
+  .container {
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    grid-template-columns: 1fr; /* Cambia a una sola columna */
+    grid-template-rows: auto auto; /* Fila para categorías y productos */
+  }
 }
 
 /* Sidebar */
@@ -27,19 +40,28 @@
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  color: #fff; /* Asegúrate de que el texto sea visible */
+}
+@media (max-width: 768px) {
+  .sidebar {
+    grid-row: 1; /* Asegura que el sidebar esté en la primera fila */
+    display: flex;
+    flex-wrap: wrap; /* Permite que las categorías se ajusten en filas */
+    justify-content: center;
+  }
 }
 
 .sidebar h2 {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 18px;
+  font-size: 2rem;
   margin-bottom: 5%;
   color: #2F1893;
-  font-weight: 600;
+  font-weight: bold;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  -webkit-text-decoration: underline solid 3px;
-          text-decoration: underline solid 3px;
+}
+@media (max-width: 768px) {
+  .sidebar h2 {
+    justify-content: center;
+  }
 }
 
 .category-list {
@@ -47,12 +69,21 @@
   padding: 0;
   margin: 0;
 }
+@media (max-width: 768px) {
+  .category-list {
+    display: flex; /* Coloca las categorías en fila */
+    flex-wrap: wrap; /* Permite que las categorías se ajusten */
+  }
+}
 
 .category-list li {
   margin-bottom: 10px;
   position: relative;
-  width: 50%;
-  margin-right: 40%;
+}
+@media (max-width: 768px) {
+  .category-list li {
+    margin: 10px 5px; /* Ajusta el margen para pantallas pequeñas */
+  }
 }
 
 .category-list a {
@@ -62,10 +93,17 @@
   font-weight: 500;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   transition: color 0.3s ease;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .category-list a {
+    cursor: pointer;
+    font-size: 0.8rem; /* Reduce el tamaño de fuente en pantallas pequeñas */
+  }
 }
 
 .category-list a:hover {
-  color: #5f079e;
+  color: #220e68;
   font-weight: bold;
   letter-spacing: 1px;
   cursor: pointer;
@@ -78,27 +116,45 @@
   left: 0;
   width: 0; /* Comienza con el ancho en 0 */
   height: 2px;
-  background-color: #5f079e;
+  background-color: #220e68;
   transition: width 0.5s ease; /* Cambiar scaleX a un cambio de ancho */
 }
 
 /* Establece el ancho al 100% al pasar el ratón */
 .category-list a:hover::before {
-  width: 100%; /* La línea se expandirá de izquierda a derecha */
+  width: 40%; /* La línea se expandirá de izquierda a derecha */
 }
 
 /* Productos */
 .products {
-  padding: 20px;
+  padding: 10%;
+}
+@media (max-width: 768px) {
+  .products {
+    grid-row: 2; /* Asegura que los productos estén en la segunda fila */
+  }
 }
 
 .products h1 {
-  font-size: 24px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 2.5rem;
   margin-bottom: 20px;
   color: #2F1893;
-  font-weight: 600;
+  font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
+}
+@media (max-width: 1200px) {
+  .products h1 {
+    text-align: center;
+    font-size: 1.8em; /* Ajusta el tamaño de fuente para pantallas pequeñas */
+  }
+}
+@media (max-width: 768px) {
+  .products h1 {
+    text-align: center;
+    font-size: 1.6em; /* Ajusta el tamaño de fuente para pantallas pequeñas */
+  }
 }
 
 /* Card de producto */
@@ -115,7 +171,6 @@
   cursor: pointer;
 }
 .product-card:hover {
-  transform: translateY(-10px);
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
 }
 
@@ -146,7 +201,7 @@
 
 .product-info p {
   font-size: 14px;
-  color: #666;
+  color: #181818;
 }
 
 .price-rating {
@@ -184,26 +239,28 @@
   display: inline-block;
 }
 
-.btn.purchase {
+.btn.add-to-bag {
+  border: none;
   background-color: #2F1893;
   color: #fff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-.btn.purchase:hover {
-  background-color: #370074;
-  transform: scale(1.05);
-  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.15);
-}
-
-.btn.add-to-bag {
-  background-color: #ddd;
-  color: #333;
   border: 1px solid #ccc;
 }
 .btn.add-to-bag:hover {
-  background-color: #bbb;
-  transform: scale(1.05);
+  background-color: #220e68;
+  transform: scale(1.02);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 1200px) {
+  .btn.add-to-bag {
+    margin-top: 3%;
+    font-size: 0.7rem;
+  }
+}
+@media (max-width: 768px) {
+  .btn.add-to-bag {
+    margin-top: 3%;
+    font-size: 0.8rem;
+  }
 }
 
 /* Efectos y animaciones */
