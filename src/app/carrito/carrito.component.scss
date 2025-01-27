@@ -11,7 +11,7 @@ $color-secundario: #ffffff;
 
 .carrito-container {
   height: auto;
-  width: 60%;  
+  width: 60%;
   margin: 20px auto;
   padding: 20px;
   background-color: $color-secundario;
@@ -19,7 +19,7 @@ $color-secundario: #ffffff;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  gap: 20px;  
+  gap: 20px;
 
   .producto {
     display: flex;
@@ -35,9 +35,11 @@ $color-secundario: #ffffff;
     }
 
     .producto-info {
+      width: 40%;
       display: flex;
       align-items: center;
       gap: 15px;
+      flex-wrap: wrap; // Permite que el texto se ajuste si es muy largo
 
       .producto-imagen {
         width: 60px;
@@ -54,8 +56,12 @@ $color-secundario: #ffffff;
       }
 
       span {
-        font-size: 16px;
+        font-size: 1rem; // Ajusta el tamaño de la fuente de manera flexible
         color: $color-principal;
+        font-weight: bold; // Añade énfasis al texto del título
+        text-align: left; // Alinea el texto a la izquierda    
+        overflow: hidden; // Oculta cualquier texto que se desborde
+        text-overflow: ellipsis; // Muestra "..." si el texto es demasiado largo
       }
     }
 
