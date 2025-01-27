@@ -98,7 +98,7 @@ $color-secundario: #ffffff;
     }
 
     .eliminar {
-      background-color: #bf3838;
+      background-color: #b52a2a;
       color: $color-secundario;
       border: none;
       border-radius: 4px;
@@ -108,7 +108,7 @@ $color-secundario: #ffffff;
       transition: background-color 0.3s;
 
       &:hover {
-        background-color: darken(#bf3838, 10%);
+        background-color: darken(#b52a2a, 10%);
       }
     }
   }
