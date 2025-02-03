@@ -32,14 +32,16 @@ CREATE TABLE Productos (
 );
 
 -- Tabla Opiniones
+-- Tabla Opiniones
 CREATE TABLE Opiniones (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
     comentario TEXT NOT NULL,
-    valoracion INT CHECK (valoracion BETWEEN 1 AND 5) NOT NULL,
+    valoracion INT NOT NULL,
     producto_id INT NOT NULL,
     FOREIGN KEY (producto_id) REFERENCES Productos(id) ON DELETE CASCADE
 );
+
 
 -- Tabla Carrito
 CREATE TABLE Carrito (
