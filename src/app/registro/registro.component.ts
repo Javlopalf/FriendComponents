@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-registro',
@@ -9,10 +10,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class RegistroComponent {
   registerForm: FormGroup;
   submitted = false;
+  private apiUrl = 'http://localhost/FriendComponents/controller/UsuarioController.php'; // URL del backend
 
 
   //Validador de Formulario
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private http: HttpClient) {
     this.registerForm = this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
@@ -47,26 +49,35 @@ export class RegistroComponent {
     };
   }
 
-  //Al completar el formulario indica al usuario si esta bien cumplimentada la informacion
-  onSubmit() {
-    this.submitted = true;
+  //Al completar el formulario indica al usuario si esta bien cumplimentada la informacion  
+    onSubmit() {
+      this.submitted = true;
   
-    // Detener si el formulario no es válido
-    if (this.registerForm.invalid) {
-      return;
+      if (this.registerForm.invalid) {
+        return;
+      }
+  
+      const formData = {
+        nombre: this.registerForm.value.name,
+        correo: this.registerForm.value.email,
+        contrasenia: this.registerForm.value.password
+      };
+  
+      this.http.post(this.apiUrl, formData).subscribe({
+        next: (response) => {
+          console.log('Usuario registrado:', response);
+          alert('Usuario registrado correctamente.');
+          this.registerForm.reset();
+          this.submitted = false;
+        },
+        error: (error) => {
+          console.error('Error al registrar usuario:', error);
+          alert('Hubo un error al registrar el usuario.');
+        }
+      });
     }
   
-    // Si el formulario es válido, procesar los datos
-    console.log('Formulario válido:', this.registerForm.value);
-    alert('Registrado Correctamente');
-    
-    // Reiniciar el formulario
-    this.registerForm.reset();
-    this.submitted = false; // Resetear el estado de envío
-  }
-
-  // Getter para simplificar el acceso a los controles del formulario
-  get f() {
-    return this.registerForm.controls;
-  }
+    get f() {
+      return this.registerForm.controls;
+    }
 }
