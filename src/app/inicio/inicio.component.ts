@@ -1,39 +1,36 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { InicioService } from '../inicio/inicio.service';
+import { CategoriasService } from '../servicios/categorias-service.service';  // Asegúrate de que la ruta es correcta
 
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.component.html',
   styleUrls: ['./inicio.component.scss']
 })
-export class InicioComponent {
-  categorias = [
-    { nombre: 'Programas', imagen: '../../assets/images/windowsP.jpg', fuente:"https://pixabay.com/es/" },   
-    { nombre: 'Placas Bases', imagen: '../../assets/images/placabaseP.jpg', fuente:"https://www.freepik.es/"},
-    { nombre: 'Ventiladores', imagen: '../../assets/images/ventilador2P.jpg' , fuente:"https://pixabay.com/es/"},
-    { nombre: 'Procesadores', imagen: '../../assets/images/procesadorP.jpg', fuente:"https://www.freepik.es/" },
-    { nombre: 'Móviles', imagen: '../../assets/images/movilesP.jpg', fuente:"https://www.freepik.es/" },
-    { nombre: 'Memoria RAM', imagen: '../../assets/images/ramP.jpg', fuente:"https://www.freepik.es/" },
-    { nombre: 'Refrigeración líquida', imagen: '../../assets/images/refrigeracionP.jpg', fuente:"https://www.freepik.es/" },
-    { nombre: 'Fuentes de alimentación', imagen: '../../assets/images/fuente.jpg', fuente:"https://www.freepik.es/" },
-    { nombre: 'Torres', imagen: '../../assets/images/torre17.jpg' , fuente:"https://www.freepik.es/"},
-    { nombre: 'Monitores', imagen: '../../assets/images/monitor.jpg', fuente:"https://pixabay.com/es/" }    
-  ];
+export class InicioComponent implements OnInit {
 
-  constructor(private router: Router, private inicioService: InicioService) {}
+  categorias: any[] = [];  // Arreglo para almacenar las categorías desde la base de datos
 
-  seleccionarCategoria(categoria: string): void {
-    // Redirige al componente MenuComponent pasando la categoría como parámetro
-    this.router.navigate(['../productos', categoria]);
-  }
-
-  productos: any[] = [];
-
+  constructor(private router: Router, private categoriasService: CategoriasService) {}
 
   ngOnInit(): void {
-    this.inicioService.obtenerProductos().subscribe((data) => {
-      this.productos = data;
-    });
+    this.obtenerCategorias();  // Llamar al método para obtener las categorías
+  }
+
+  // Método para obtener las categorías
+  obtenerCategorias(): void {
+    this.categoriasService.getCategorias().subscribe(
+      (data) => {
+        this.categorias = data;  // Asegúrate de que la estructura de datos sea correcta
+      },
+      (error) => {
+        console.error('Error al obtener las categorías', error);
+      }
+    );
+  }
+
+  seleccionarCategoria(categoria: string): void {
+    // Redirige al componente Productos pasando la categoría como parámetro
+    this.router.navigate(['../productos', categoria]);
   }
 }

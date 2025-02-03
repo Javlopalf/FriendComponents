@@ -25,13 +25,14 @@ export class LoginComponent {
   onSubmit(): void {
     if (this.loginForm.valid) {
       const { email, password } = this.loginForm.value;
-      
+
       // Llamada al servicio de login
       this.authService.login(email, password).subscribe({
         next: (response) => {
           // Si la respuesta es exitosa, redirige al usuario
           if (response.mensaje === 'Login exitoso') {
-            this.router.navigate(['inicio']); // Redirige a la página de inicio o dashboard
+            localStorage.setItem('user', JSON.stringify(response.usuario)); // Suponiendo que response.usuario contiene el usuario
+            this.router.navigate(['/inicio']);
           } else {
             this.errorMessage = 'Correo o contraseña incorrectos';
           }
@@ -44,4 +45,6 @@ export class LoginComponent {
       alert('Formulario inválido. Revisa los campos.');
     }
   }
+
+
 }

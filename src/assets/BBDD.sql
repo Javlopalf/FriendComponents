@@ -63,16 +63,17 @@ CREATE TABLE Productos_Carrito (
 
 -- Insertar categorías
 INSERT INTO Categorias (nombre, imagen, descripcion) VALUES
-('Programas', 'ruta/imagen/programas.jpg', 'Categoría de software y licencias'),
-('Móviles', 'ruta/imagen/moviles.jpg', 'Smartphones de última generación'),
-('Placas Bases', 'ruta/imagen/placas_bases.jpg', 'Placas base para PCs'),
-('Procesadores', 'ruta/imagen/procesadores.jpg', 'Procesadores para equipos avanzados'),
-('Ventiladores', 'ruta/imagen/ventiladores.jpg', 'Ventiladores y disipadores de CPU'),
-('Memoria RAM', 'ruta/imagen/memoria_ram.jpg', 'Módulos de memoria RAM DDR4 y más'),
-('Refrigeración líquida', 'ruta/imagen/refrigeracion_liquida.jpg', 'Sistemas de refrigeración líquida'),
-('Fuentes de alimentación', 'ruta/imagen/fuentes.jpg', 'Fuentes de alimentación eficientes'),
-('Torres', 'ruta/imagen/torres.jpg', 'Cajas para ensamblar tu PC'),
-('Monitores', 'ruta/imagen/monitores.jpg', 'Pantallas de alta calidad y resolución');
+('Programas', '../../assets/images/windowsP.jpg', 'Categoría de software y licencias'),
+('Móviles', '../../assets/images/movilesP.jpg', 'Smartphones de última generación'),
+('Placas Bases', '../../assets/images/placabaseP.jpg', 'Placas base para PCs'),
+('Procesadores', '../../assets/images/procesadorP.jpg', 'Procesadores para equipos avanzados'),
+('Ventiladores', '../../assets/images/ventilador2P.jpg', 'Ventiladores y disipadores de CPU'),
+('Memoria RAM', '../../assets/images/ramP.jpg', 'Módulos de memoria RAM DDR4 y más'),
+('Refrigeración líquida', '../../assets/images/refrigeracionP.jpg', 'Sistemas de refrigeración líquida'),
+('Fuentes de alimentación', '../../assets/images/fuente.jpg', 'Fuentes de alimentación eficientes'),
+('Torres', '../../assets/images/torre17.jpg', 'Cajas para ensamblar tu PC'),
+('Monitores', '../../assets/images/monitor.jpg', 'Pantallas de alta calidad y resolución');
+
 
 -- Insertar productos para cada categoría
 
