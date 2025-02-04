@@ -29,8 +29,8 @@ export class InicioComponent implements OnInit {
     );
   }
 
-  seleccionarCategoria(categoria: string): void {
+  seleccionarCategoria(categoriaId: number): void {
     // Redirige al componente Productos pasando la categoría como parámetro
-    this.router.navigate(['../productos', categoria]);
+    this.router.navigate(['../productos', categoriaId]);
   }
 }
