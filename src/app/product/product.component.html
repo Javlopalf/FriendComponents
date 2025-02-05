@@ -21,16 +21,18 @@
   <!-- Sección de Foros -->
   <div class="forum-section">
     <h2>Opiniones de Usuarios</h2>
-    <div class="forum-post" *ngFor="let comentario of comentarios">
-      <p class="comment-text">{{ comentario.mensaje }}</p>
+    <div class="forum-post" *ngFor="let comentario of opiniones">
+      <p class="comment-text">{{ comentario.comentario }}</p>
       <div class="comment-meta">
-        <span class="comment-author">Por: {{ comentario.persona }}</span>
+        <span class="comment-author">Por: {{ comentario.nombre }}</span>
         <span class="comment-date">Fecha: {{ comentario.fecha }}</span>
-        <span class="comment-rating"><strong> Nota: {{ comentario.nota }} </strong>
+        <span class="comment-rating"><strong> Nota: {{ comentario.valoracion }} </strong>
           <img src="../../assets/images/estrella.png" alt="estrella" title="estrella"/>
         </span>
       </div>
     </div>
+
+
     <!-- Formulario para agregar comentario -->
     <form [formGroup]="comentarioForm" (ngSubmit)="agregarComentario()">
       <div class="form-group">

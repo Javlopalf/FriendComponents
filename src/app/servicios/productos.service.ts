@@ -7,11 +7,11 @@ import { Observable } from 'rxjs';
 })
 export class ProductosService {
   private apiUrl = 'http://localhost/FriendComponents/controller/ProductoController.php'; 
-
+  
   constructor(private http: HttpClient) {}
 
-  // Obtener productos por categoría
-  getProductosPorCategoria(nombreCategoria: string): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}?nombreCategoria=${nombreCategoria}`);
+  getProductosPorCategoria(nombreCategoria: string): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}?nombreCategoria=${nombreCategoria}`);
   }
+
 }
