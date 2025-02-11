@@ -24,10 +24,11 @@ export class CarritoService {
 
   // Eliminar un producto del carrito
   eliminarDelCarrito(usuarioId: number, productoId: number): Observable<any> {
-    const body = { usuario_id: usuarioId, producto_id: productoId };
-    return this.http.delete(`${this.apiUrl}`, { body });
+    const url = `${this.apiUrl}?usuario_id=${usuarioId}&producto_id=${productoId}`;
+    console.log('URL de eliminación:', url);  // Verifica que la URL esté construida correctamente
+    return this.http.delete(url);
   }
-
+  
   // Actualizar la cantidad de un producto en el carrito
   actualizarCantidad(usuarioId: number, productoId: number, cantidad: number): Observable<any> {
     const body = { usuario_id: usuarioId, producto_id: productoId, cantidad: cantidad };

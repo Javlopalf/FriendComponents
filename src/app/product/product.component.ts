@@ -17,7 +17,7 @@ export class ProductComponent implements OnInit {
   opiniones: any[] = []; // Lista de opiniones del producto
   comentarioForm!: FormGroup; // Formulario reactivo para comentarios
   productoId!: number;
-  usuarioId: number = 1;
+  usuarioId!: number;
 
   constructor(
     private meta: Meta, 
@@ -26,8 +26,8 @@ export class ProductComponent implements OnInit {
     private fb: FormBuilder,
     private productoService: ProductoService,
     private opinionService: OpinionService,
-    private carritoService: CarritoService 
-  ) {}
+    private carritoService: CarritoService
+  ) { }
 
   ngOnInit(): void {
     //Meta y título
@@ -41,6 +41,14 @@ export class ProductComponent implements OnInit {
       this.productoId = Number(id);
       this.cargarProducto(this.productoId);
       this.obtenerOpiniones(this.productoId);
+    }
+
+    // Obtener el ID del usuario desde localStorage (suponiendo que el objeto usuario está guardado)
+    const usuario = JSON.parse(localStorage.getItem('user') || '{}');
+    if (usuario && usuario.id) {
+      this.usuarioId = usuario.id;
+    } else {
+      console.error('No se encontró el usuario en localStorage');
     }
 
     // Inicializar el formulario de comentarios
@@ -95,9 +103,9 @@ export class ProductComponent implements OnInit {
     }
   }
 
- agregarAlCarrito(): void {
+  agregarAlCarrito(): void {
     // Asumiendo que el usuario está logueado, se necesita el ID del usuario
-    const cantidad = 1; // Asumimos que por ahora solo agregamos 1 unidad del producto al carrito
+    const cantidad = 1;
     this.carritoService.agregarAlCarrito(this.usuarioId, this.productoId, cantidad).subscribe(
       (response) => {
         alert('¡Producto añadido al carrito!');

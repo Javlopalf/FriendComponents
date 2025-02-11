@@ -3,12 +3,12 @@
 <div class="wrapper">
   <div class="carrito-container">
     <div *ngFor="let producto of carrito; let i = index" class="producto">
-
-
       <div class="producto-info">
         <div class="producto-imagen">
-          <img src="{{producto.imagen}}" alt="{{producto.nombre}}" title="={{producto.nombre}}">
+          <!-- Mostrar la imagen del producto -->
+          <img [src]="producto.imagen" [alt]="producto.nombre" [title]="producto.nombre">
         </div>
+        <!-- Mostrar el nombre del producto -->
         <span>{{ producto.nombre }}</span>
         <span>{{ producto.precio | currency:'EUR' }}</span>
       </div>
