@@ -45,10 +45,12 @@ export class ProductosComponent implements OnInit {
     });
   }
 
-  seleccionarCategoria(nombreCategoria: string): void {
+  seleccionarCategoria(nombreCategoria: string, event: Event): void {
+    event.preventDefault();  // Evita la recarga de la página
     this.categoriaSeleccionada = nombreCategoria;
     this.cargarProductos(nombreCategoria);
   }
+  
 
   cargarProductos(nombreCategoria: string): void {
     this.productosService.getProductosPorCategoria(nombreCategoria).subscribe(productos => {
