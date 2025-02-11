@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../servicios/auth-service.service'; // Asegúrate de que la ruta del servicio sea correcta
 import { Router } from '@angular/router';
-
+import { Meta, Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -12,7 +12,13 @@ export class LoginComponent {
   loginForm: FormGroup;
   errorMessage: string = '';
 
-  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {
+  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router,private meta: Meta, 
+    private title: Title,) {
+    //Meta y título
+    this.title.setTitle('Login');
+    this.meta.updateTag({ name: 'description', content: 'Página de login de usuarios' });
+    this.meta.updateTag({ name: 'keywords', content: 'Login de usuarios' });
+
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]], // Validación de email
       password: ['', [

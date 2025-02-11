@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-
+import { Meta, Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
@@ -14,7 +14,13 @@ export class RegistroComponent {
 
 
   //Validador de Formulario
-  constructor(private formBuilder: FormBuilder, private http: HttpClient) {
+  constructor(private formBuilder: FormBuilder, private http: HttpClient,private meta: Meta, 
+    private title: Title,) {
+    //Meta y título
+    this.title.setTitle('Registo');
+    this.meta.updateTag({ name: 'description', content: 'Página de registro de usuarios' });
+    this.meta.updateTag({ name: 'keywords', content: 'Registro de usuarios' });
+
     this.registerForm = this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],

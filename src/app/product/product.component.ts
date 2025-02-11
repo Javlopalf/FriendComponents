@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ProductoService } from '../servicios/producto.service';
 import { OpinionService } from '../servicios/opinion.service';
 import { CarritoService } from '../servicios/carrito.service';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-product',
@@ -19,6 +20,8 @@ export class ProductComponent implements OnInit {
   usuarioId: number = 1;
 
   constructor(
+    private meta: Meta, 
+    private title: Title,
     private route: ActivatedRoute,
     private fb: FormBuilder,
     private productoService: ProductoService,
@@ -27,6 +30,11 @@ export class ProductComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    //Meta y título
+    this.title.setTitle('Producto');
+    this.meta.updateTag({ name: 'description', content: 'Página del producto' });
+    this.meta.updateTag({ name: 'keywords', content: 'datos del producto' });
+
     // Obtener el ID del producto desde la URL
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
