@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CategoriasService } from '../servicios/categorias-service.service';  // Asegúrate de que la ruta es correcta
 import { ProductosService } from '../servicios/productos.service';
-
+import { Meta, Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-productos',
   templateUrl: './productos.component.html',
@@ -16,12 +16,20 @@ export class ProductosComponent implements OnInit {
   categoriaSeleccionada: string = '';
 
   constructor(
+    private meta: Meta, 
+    private title: Title,
     private route: ActivatedRoute,
     private productosService: ProductosService,
     private categoriasService: CategoriasService
   ) {}
 
   ngOnInit(): void {
+    //Meta y título
+    this.title.setTitle('Productos');
+    this.meta.updateTag({ name: 'description', content: 'Menú de productos' });
+    this.meta.updateTag({ name: 'keywords', content: 'Selección de productos' });
+
+
     // Obtener categorías desde el servicio
     this.categoriasService.getCategorias().subscribe(categorias => {
       this.categorias = categorias;
