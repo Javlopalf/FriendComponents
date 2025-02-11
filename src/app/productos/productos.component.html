@@ -7,7 +7,9 @@
       <h2>Categorías</h2>
       <ul class="category-list">
         <li *ngFor="let categoria of categorias">
-          <a (click)="seleccionarCategoria(categoria.nombre)">{{ categoria.nombre }}</a>
+          <a [href]="'/categoria/' + categoria.nombre" (click)="seleccionarCategoria(categoria.nombre, $event)">
+            {{ categoria.nombre }}
+          </a>          
         </li>
       </ul>
     </aside>
