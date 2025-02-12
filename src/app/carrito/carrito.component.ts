@@ -1,5 +1,7 @@
+// carrito.component.ts
 import { Component, OnInit } from '@angular/core';
 import { CarritoService } from '../servicios/carrito.service';
+import { CantidadCarritoService } from '../servicios/cantidad-carrito.service';
 
 @Component({
   selector: 'app-carrito',
@@ -11,7 +13,10 @@ export class CarritoComponent implements OnInit {
   usuarioId!: number;
   carritoId!: number;
 
-  constructor(private carritoService: CarritoService) { }
+  constructor(
+    private carritoService: CarritoService,
+    private cartCountService: CantidadCarritoService
+  ) { }
 
   ngOnInit(): void {
     // Obtener el ID del usuario desde localStorage (suponiendo que el objeto usuario está guardado)
@@ -28,7 +33,7 @@ export class CarritoComponent implements OnInit {
   cargarCarrito() {
     this.carritoService.obtenerCarrito(this.usuarioId).subscribe(
       (data) => {
-        console.log("Datos recibidos del carrito:", data); // Verifica la estructura del JSON
+        console.log("Datos recibidos del carrito:", data); // Depuración
         if (data.length > 0 && data[0].carrito_id) {
           this.carritoId = data[0].carrito_id; // Asigna el ID del carrito
         } else {
@@ -42,46 +47,52 @@ export class CarritoComponent implements OnInit {
           cantidad: item.cantidad,
           imagen: item.imagen || '../../assets/images/productos/default.jpg'
         }));
+        // Actualizar el contador (suma total de unidades)
+        this.actualizarContador();
       },
       (error) => console.error('Error al cargar el carrito', error)
     );
   }
 
-
-
+  // Sumar todas las cantidades del carrito
+  actualizarContador() {
+    const total = this.carrito.reduce((acc, producto) => acc + producto.cantidad, 0);
+    this.cartCountService.updateCartCount(total);
+  }
 
   // Agregar una unidad y actualizar en el backend
   agregarUnidad(index: number) {
     const producto = this.carrito[index];
-    console.log('Cantidad de producto', producto.cantidad);
     producto.cantidad++;
-    this.carritoService.actualizarCantidad(this.usuarioId, producto.id, producto.cantidad).subscribe();
+    this.carritoService.actualizarCantidad(this.usuarioId, producto.id, producto.cantidad).subscribe(
+      () => {
+        console.log('Cantidad actualizada a', producto.cantidad);
+        this.actualizarContador();
+      },
+      (error) => console.error('Error al actualizar la cantidad del producto', error)
+    );
   }
 
-  // Quitar una unidad y actualizar en el backend// Quitar una unidad y actualizar en el backend
+  // Quitar una unidad y actualizar en el backend; si la cantidad llega a 0 se elimina el producto
   quitarUnidad(index: number) {
     const producto = this.carrito[index];
-
-    // Si la cantidad es mayor a 1, simplemente decrementa y actualiza
     if (producto.cantidad > 1) {
       producto.cantidad--;
       this.carritoService.actualizarCantidad(this.usuarioId, producto.id, producto.cantidad).subscribe(
         () => {
           console.log('Cantidad actualizada a', producto.cantidad);
+          this.actualizarContador();
         },
-        (error) => {
-          console.error('Error al actualizar la cantidad del producto', error);
-        }
+        (error) => console.error('Error al actualizar la cantidad del producto', error)
       );
-    }
-    // Si la cantidad es 1, al quitarla la nueva cantidad será 0 y se eliminará el producto
-    else if (producto.cantidad === 1) {
-      // Llamamos al endpoint con cantidad 0, el cual en el backend elimina el producto
+    } else if (producto.cantidad === 1) {
+      // Si la cantidad es 1, al quitar se establece a 0, eliminando el producto
       this.carritoService.actualizarCantidad(this.usuarioId, producto.id, 0).subscribe(
         (response) => {
           console.log("Producto eliminado por tener 0 cantidad", response);
-          // Eliminamos el producto del arreglo local para actualizar la vista
+          // Eliminar el producto del arreglo local
           this.carrito.splice(index, 1);
+          this.actualizarContador();
         },
         (error) => {
           console.error("Error al eliminar el producto con cantidad 0", error);
@@ -93,29 +104,19 @@ export class CarritoComponent implements OnInit {
   // Eliminar producto del carrito y actualizar en el backend
   eliminarProducto(i: number) {
     const producto = this.carrito[i];
-    console.log('Eliminando producto con id:', producto.id);  // Asegúrate de que este id esté correctamente definido
-    console.log('Eliminando el carrito del usuario con id', this.usuarioId);
-    console.log('id del carrito', this.carritoId);
     if (this.usuarioId && producto && producto.id) {
-      // Si ambos el usuarioId y producto.id están definidos, hacemos la llamada
       this.carritoService.eliminarDelCarrito(this.usuarioId, producto.id).subscribe(
         (response) => {
           console.log('Producto eliminado correctamente', response);
-          // Eliminar el producto de la lista en el frontend
           this.carrito.splice(i, 1);
+          this.actualizarContador();
         },
         (error) => {
           console.error('Error al eliminar el producto del carrito', error);
         }
       );
-    } else {
-      console.error('Datos incompletos para eliminar el producto del carrito');
-      console.log('usuarioId:', this.usuarioId);
-      console.log('productoId:', producto ? producto.id : 'no disponible');
     }
   }
-
-
 
   // Calcular total del carrito
   getTotal(): number {

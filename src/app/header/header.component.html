@@ -1,15 +1,17 @@
 <header class="header">
   <div class="logo">
-    <a href="/inicio">
+    <a routerLink="/inicio">
       <img src="assets/images/logo.png" alt="Logo">
     </a>
   </div>
   <div class="text-container">
-    <span> <a routerLink="/inicio">FriendComponents</a></span>
+    <span><a routerLink="/inicio">FriendComponents</a></span>
   </div>
   <div class="images-container">
-    <a href="/carrito">
+    <a routerLink="/carrito" class="cart-icon">
       <img src="assets/images/carrito.png" alt="compra">
+      <!-- Badge para mostrar la cantidad de productos -->
+      <span class="cart-badge" *ngIf="cartCount > 0">{{ cartCount }}</span>
     </a>
   </div>
 </header>

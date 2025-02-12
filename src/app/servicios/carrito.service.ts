@@ -28,7 +28,7 @@ export class CarritoService {
     console.log('URL de eliminación:', url);  // Verifica que la URL esté construida correctamente
     return this.http.delete(url);
   }
-  
+
   // Actualizar la cantidad de un producto en el carrito
   actualizarCantidad(usuarioId: number, productoId: number, cantidad: number): Observable<any> {
     const body = { usuario_id: usuarioId, producto_id: productoId, cantidad: cantidad };
@@ -39,4 +39,13 @@ export class CarritoService {
   calcularTotal(usuarioId: number): Observable<any> {
     return this.http.get(`${this.apiUrl}/CALCULAR_TOTAL?usuario_id=${usuarioId}`);
   }
+
+  // Obtener la cantidad total de productos en el carrito de un usuario
+  obtenerCantidadTotal(usuarioId: number): Observable<any> {
+    return this.http.get(`${this.apiUrl}/GET_CANTIDAD_TOTAL?usuario_id=${usuarioId}`);
+  }
+
+
+
+
 }
