@@ -18,6 +18,7 @@ export class ProductComponent implements OnInit {
   comentarioForm!: FormGroup; // Formulario reactivo para comentarios
   productoId!: number;
   usuarioId!: number;
+  cantidadTotal: number = 0; // Para almacenar la cantidad total de productos en el carrito
 
   constructor(
     private meta: Meta, 
@@ -47,6 +48,7 @@ export class ProductComponent implements OnInit {
     const usuario = JSON.parse(localStorage.getItem('user') || '{}');
     if (usuario && usuario.id) {
       this.usuarioId = usuario.id;
+      this.obtenerCantidadTotalCarrito(); // Obtener la cantidad total al cargar el componente
     } else {
       console.error('No se encontró el usuario en localStorage');
     }
@@ -103,16 +105,30 @@ export class ProductComponent implements OnInit {
     }
   }
 
+  // Método para agregar al carrito y actualizar la cantidad total
   agregarAlCarrito(): void {
-    // Asumiendo que el usuario está logueado, se necesita el ID del usuario
     const cantidad = 1;
     this.carritoService.agregarAlCarrito(this.usuarioId, this.productoId, cantidad).subscribe(
       (response) => {
         alert('¡Producto añadido al carrito!');
         console.log('Producto añadido al carrito:', response);
+        this.obtenerCantidadTotalCarrito(); // Actualizar la cantidad total al agregar un producto
       },
       (error) => {
         console.error('Error al añadir el producto al carrito:', error);
+      }
+    );
+  }
+
+  // Método para obtener la cantidad total de productos en el carrito
+  obtenerCantidadTotalCarrito(): void {
+    this.carritoService.obtenerCantidadTotal(this.usuarioId).subscribe(
+      (response) => {
+        this.cantidadTotal = response.cantidad_total;
+        console.log('Cantidad total de productos en el carrito:', this.cantidadTotal);
+      },
+      (error) => {
+        console.error('Error al obtener la cantidad total del carrito:', error);
       }
     );
   }
