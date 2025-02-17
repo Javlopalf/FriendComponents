@@ -16,11 +16,15 @@ export class AuthService {
   login(email: string, password: string): Observable<any> {
     const params = new HttpParams().set('correo', email).set('contrasenia', password);
     return this.http.get<any>(this.apiUrl, { params }).pipe(
-      // Si el login es exitoso, guarda el usuario en localStorage
       tap((response) => {
         if (response.mensaje === 'Login exitoso') {
-          // Guarda el usuario en localStorage (puedes guardar todo el objeto del usuario o solo un token)
-          localStorage.setItem('user', JSON.stringify(response.usuario)); // Suponiendo que `response.usuario` contiene los datos del usuario
+          // Guarda solo los datos necesarios en localStorage
+          const userData = {
+            nombre: response.usuario.nombre,  // Asegurar que tiene nombre
+            correo: response.usuario.correo, // Guardar el email
+            id: response.usuario.id           // Si tiene un ID, también se puede almacenar
+          };
+          localStorage.setItem('user', JSON.stringify(userData));
         }
       })
     );
@@ -35,5 +39,15 @@ export class AuthService {
   // Método para verificar si el usuario está autenticado
   isAuthenticated(): boolean {
     return localStorage.getItem('user') !== null;
+  }
+
+  // Método para obtener el correo desde localStorage
+  getUserEmail(): string | null {
+    const user = localStorage.getItem('user');
+    if (user) {
+      const parsedUser = JSON.parse(user);
+      return parsedUser.correo || null; // Retorna el email o null si no existe
+    }
+    return null;
   }
 }

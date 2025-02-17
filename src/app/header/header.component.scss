@@ -82,6 +82,40 @@
   font-size: 12px;
 }
 
+.cuentaUsuario{
+  color: white;
+  font-style: bold;
+}
+
+.dropdown .btn {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 1rem;
+}
+
+.dropdown-menu {
+  min-width: 200px;
+}
+
+.dropdown-item-text {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.dropdown-item {
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background-color: #f8f9fa;
+}
+
+.text-danger {
+  font-weight: bold;
+}
+
+
 
 /* Responsividad */
 @media (max-width: 768px) {

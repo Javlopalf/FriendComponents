@@ -8,6 +8,20 @@
     <span><a routerLink="/inicio">FriendComponents</a></span>
   </div>
   <div class="images-container">
+    <div class="dropdown">
+      <button class="btn btn-primary dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown"
+        aria-expanded="false">
+        {{ userName }}
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+        <li><span class="dropdown-item-text"><strong>{{ userName }}</strong></span></li>
+        <li><span class="dropdown-item-text">{{ userEmail }}</span></li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+        <li><button class="dropdown-item text-danger" (click)="logout()">Cerrar sesión</button></li>
+      </ul>
+    </div>
     <a routerLink="/carrito" class="cart-icon">
       <img src="assets/images/carrito.png" alt="compra">
       <!-- Badge para mostrar la cantidad de productos -->

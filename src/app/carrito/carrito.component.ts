@@ -36,8 +36,6 @@ export class CarritoComponent implements OnInit {
         console.log("Datos recibidos del carrito:", data); // Depuración
         if (data.length > 0 && data[0].carrito_id) {
           this.carritoId = data[0].carrito_id; // Asigna el ID del carrito
-        } else {
-          console.warn("No se encontró carrito_id en los datos.");
         }
         this.carrito = data.map((item: any) => ({
           cart_id: item.carrito_id,
