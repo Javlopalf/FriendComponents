@@ -129,7 +129,7 @@ export class CarritoComponent implements OnInit {
   // Realizar pedido (simulación)
   realizarPedido() {
     // Obtener el correo del usuario desde el backend
-    this.http.post<{ email: string }>(`http://localhost:3000/get-user-email`, { userId: this.usuarioId }).subscribe(
+    this.http.post<{ email: string }>(`http://localhost:3307/get-user-email`, { userId: this.usuarioId }).subscribe(
       response => {
         const userEmail = response.email;
 
