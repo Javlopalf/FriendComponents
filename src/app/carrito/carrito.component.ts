@@ -2,6 +2,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CarritoService } from '../servicios/carrito.service';
 import { CantidadCarritoService } from '../servicios/cantidad-carrito.service';
+import { EmailService } from '../servicios/email.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-carrito',
@@ -15,11 +17,12 @@ export class CarritoComponent implements OnInit {
 
   constructor(
     private carritoService: CarritoService,
-    private cartCountService: CantidadCarritoService
+    private cartCountService: CantidadCarritoService,
+    private emailService: EmailService,
+    private http: HttpClient
   ) { }
 
   ngOnInit(): void {
-    // Obtener el ID del usuario desde localStorage (suponiendo que el objeto usuario está guardado)
     const usuario = JSON.parse(localStorage.getItem('user') || '{}');
     if (usuario && usuario.id) {
       this.usuarioId = usuario.id;
@@ -125,6 +128,34 @@ export class CarritoComponent implements OnInit {
 
   // Realizar pedido (simulación)
   realizarPedido() {
-    alert('Pedido realizado con éxito');
+    // Obtener el correo del usuario desde el backend
+    this.http.post<{ email: string }>(`http://localhost:3000/get-user-email`, { userId: this.usuarioId }).subscribe(
+      response => {
+        const userEmail = response.email;
+
+        if (!userEmail) {
+          alert('No se encontró el correo del usuario');
+          return;
+        }
+
+        const subject = 'Confirmación de Pedido';
+        const body = `Hola, tu pedido ha sido realizado con éxito.`;
+
+        this.emailService.sendEmail(userEmail, subject, body).subscribe(
+          response => {
+            alert('Pedido realizado con éxito y correo enviado');
+            console.log('Correo enviado:', response);
+          },
+          error => {
+            alert('Error al enviar el correo');
+            console.error('Error al enviar el correo:', error);
+          }
+        );
+      },
+      error => {
+        alert('Error al obtener el correo del usuario');
+        console.error('Error al obtener el correo del usuario:', error);
+      }
+    );
   }
 }
