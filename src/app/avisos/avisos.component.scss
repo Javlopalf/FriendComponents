@@ -1,0 +1,74 @@
+.avisos-legales {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff; // Fondo blanco
+    color: #333; // Color de texto principal
+  }
+  
+  .avisos-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    transition: all 0.3s ease;
+  
+    &:hover {
+      background-color: #f9f9f9; // Efecto hover suave
+    }
+  
+    h2 {
+        font-size: 24px;
+        margin-bottom: 15px;
+        text-align: center;
+      }
+  
+    p {
+      font-size: 16px;
+      color: #666;
+      line-height: 1.6;
+      margin-top: 8px;
+    }
+  
+    a {
+      color: #007BFF;
+      text-decoration: none;
+      font-weight: bold;
+  
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  
+  .propiedad-item {
+    margin-bottom: 15px;
+  
+    h3 {
+      font-size: 18px;
+      color: #333;
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+  
+      .icon {
+        margin-right: 10px;
+        color: #ff9800; // Color diferente para las subcategorías
+      }
+    }
+  
+    p {
+      font-size: 16px;
+      color: #666;
+      line-height: 1.6;
+      margin-top: 8px;
+    }
+  }
+  
+  .ultima-actualizacion {
+    font-size: 14px;
+    color: #999;
+    text-align: center;
+    margin-top: 30px;
+  }
+  

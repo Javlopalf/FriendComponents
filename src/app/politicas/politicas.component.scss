@@ -1,0 +1,52 @@
+.privacy-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff; // Fondo blanco
+    color: #333;
+  
+    h2 {
+      font-size: 24px;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+  
+    .privacy-item {
+      padding: 10px;
+      border-bottom: 1px solid #ddd; // Línea suave entre secciones
+      transition: all 0.3s ease;
+  
+      &:hover {
+        background-color: #f9f9f9; // Efecto hover suave
+      }
+  
+      h3 {
+        font-size: 18px;
+        color: #333;
+        display: flex;
+        align-items: center;
+      }
+  
+      .pin {
+        color: #2F1893; // Color de la chincheta
+        font-weight: bold;
+        margin-right: 8px;
+      }
+  
+      p, ul {
+        font-size: 16px;
+        color: #666;
+        margin-top: 5px;
+      }
+  
+      ul {
+        padding-left: 20px;
+  
+        li {
+          margin-bottom: 8px;
+        }
+      }
+    }
+  }
+  
