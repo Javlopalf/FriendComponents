@@ -7,6 +7,9 @@ import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
 import { ProductComponent } from './product/product.component';
 import { authGuard } from './servicios/auth-guard.service';
+import { AvisosComponent } from './avisos/avisos.component';
+import { PreguntasComponent } from './preguntas/preguntas.component';
+import { PoliticasComponent } from './politicas/politicas.component';
 
 
 const routes: Routes = [
@@ -16,8 +19,10 @@ const routes: Routes = [
   { path: 'productos/:categoria', component: ProductosComponent, canActivate: [authGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'registro', component: RegistroComponent},
-  { path: 'producto/:id', component: ProductComponent, canActivate: [authGuard]}
-
+  { path: 'producto/:id', component: ProductComponent, canActivate: [authGuard]},
+  { path: 'avisos', component: AvisosComponent},
+  { path: 'preguntas', component: PreguntasComponent},
+  { path: 'politicas', component: PoliticasComponent}
 
 ];
 
