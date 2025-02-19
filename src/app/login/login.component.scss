@@ -1,4 +1,29 @@
 /* Estilos para el formulario de Login */
+.logo {
+  margin-bottom: 7%;
+
+  img {
+    max-width: 75px;
+    /* Limita el tamaño máximo de la imagen */
+    width: 100%;
+    /* Hace que la imagen sea responsiva */
+    height: auto;
+    /* Mantiene la proporción de la imagen */
+    display: block;
+    /* Elimina los espacios alrededor de la imagen */
+
+    @media (max-width: 768px) {
+      max-width: 150px;
+      /* Reduce el tamaño máximo para pantallas medianas */
+    }
+
+    @media (max-width: 480px) {
+      max-width: 120px;
+      /* Reduce el tamaño máximo para pantallas pequeñas */
+    }
+  }
+}
+
 
 .wrapper {
   min-height: 100vh; // Asegura que ocupe el 100% de la altura de la ventana
@@ -88,7 +113,7 @@ p {
 a {
   color: #3b63f3;
   text-decoration: none;
-  
+
 
   @media (max-width: 480px) {
     font-size: 13px; // Ajusta el tamaño de los enlaces
@@ -109,4 +134,3 @@ a:hover {
   color: red;
   font-size: 12px;
 }
-

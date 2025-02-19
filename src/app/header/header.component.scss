@@ -1,14 +1,6 @@
-/* Reset general */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 /* Header */
 .header {
   display: flex;
-  flex-wrap: wrap; /* Permite que los elementos se ajusten en múltiples líneas si es necesario */
   justify-content: space-between;
   align-items: center;
   width: 100%;
@@ -26,12 +18,12 @@
 .header .logo img {
   width: 50px; /* Ajusta el tamaño del logo para pantallas más pequeñas */
   height: 50px;
-  margin-right: 10px;
 }
 
 /* Texto centrado */
 .header .text-container {
-  flex-grow: 1; /* Ocupa el espacio disponible */
+  margin-left: 5%;
+  flex: 1; /* Asegura que ocupe todo el espacio disponible */
   text-align: center;
 }
 
@@ -52,7 +44,7 @@
 .header .images-container {
   display: flex;
   align-items: center;
-  gap: 50px; /* Reduce el espacio en pantallas más pequeñas */
+  gap: 20px; /* Ajusta el espacio entre los iconos */
 }
 
 .header .images-container a {
@@ -61,7 +53,7 @@
 }
 
 .header .images-container img {  
-  width: 32x; /* Ajusta el tamaño en pantallas pequeñas */
+  width: 32px; /* Ajusta el tamaño en pantallas pequeñas */
   height: 32px;
   object-fit: cover;
 }
@@ -82,39 +74,108 @@
   font-size: 12px;
 }
 
-.cuentaUsuario{
+.cuentaUsuario {
   color: white;
-  font-style: bold;
-}
-
-.dropdown .btn {
-  background-color: transparent;
-  border: none;
-  color: white;
-  font-size: 1rem;
-}
-
-.dropdown-menu {
-  min-width: 200px;
-}
-
-.dropdown-item-text {
-  font-size: 0.9rem;
-  color: #333;
-}
-
-.dropdown-item {
-  cursor: pointer;
-}
-
-.dropdown-item:hover {
-  background-color: #f8f9fa;
-}
-
-.text-danger {
   font-weight: bold;
 }
 
+/* Mejoras en el Dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+.dropdown .btn {
+  background-color: #2F1893; /* Color de fondo acorde con el header */
+  color: white;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Hace que el botón se extienda completamente */
+}
+
+.dropdown .btn:hover {
+  background-color: white;
+  color: #2F1893;
+}
+
+/* Estilo del menú desplegable */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%); /* Centra el dropdown completamente */
+  background: white;
+  border-radius: 10px;
+  min-width: 300px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
+  padding: 10px 0; /* Espaciado superior e inferior */
+}
+
+/* Mostrar el dropdown cuando está activo */
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(5px);
+}
+
+/* Items dentro del menú */
+.dropdown-item-text {
+  padding: 15px 20px; /* Aumenta el padding para más espacio */
+  color: #333;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center; /* Centra el contenido */
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, color 0.3s;
+  text-align: center; /* Asegura que el texto esté alineado */
+}
+
+/* Íconos dentro del dropdown */
+.dropdown-item i {
+  font-size: 1.2rem;
+  color: #2F1893;
+}
+
+/* Efecto hover */
+.dropdown-item:hover {
+  background: #c2b9b9;
+  color: white;
+}
+
+.dropdown-item:hover i {
+  color: white;
+}
+
+/* Estilo para la opción de cerrar sesión */
+.dropdown-item.logout {
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center; /* Centra el contenido */
+  align-items: center;
+  padding: 15px 20px;
+  color: red;
+  font-weight: bold;
+  transition: background 0.3s ease-in-out, color 0.3s;
+}
+
+.dropdown-item.logout:hover {
+  background: #f8f7f7;
+}
 
 
 /* Responsividad */
@@ -126,14 +187,14 @@
 
   .header .logo {
     justify-content: center;
-    margin-bottom: 10px; /* Añade espacio entre los elementos */
+    margin-bottom: 5px; /* Añade espacio entre los elementos */
   }
 
-  .header .text-container {
+  .header .text-container {    
     font-size: 1.2rem; /* Reduce el tamaño del texto */
   }
 
-  .header .images-container {
+  .header .images-container {    
     justify-content: center;
     gap: 8px; /* Reduce el espacio entre iconos */
   }
