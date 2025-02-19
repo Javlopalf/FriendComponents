@@ -16,7 +16,8 @@ import { ProductComponent } from './product/product.component';
 import { FormsModule } from '@angular/forms';
 import { PreguntasComponent } from './preguntas/preguntas.component';
 import { PoliticasComponent } from './politicas/politicas.component';
-import { AvisosComponent } from './avisos/avisos.component'; // Importar FormsModule
+import { AvisosComponent } from './avisos/avisos.component';
+import { CookiesComponent } from './cookies/cookies.component'; // Importar FormsModule
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { AvisosComponent } from './avisos/avisos.component'; // Importar FormsMo
     PreguntasComponent,
     PoliticasComponent,
     AvisosComponent,
+    CookiesComponent,
 
   ],
   imports: [
