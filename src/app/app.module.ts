@@ -13,7 +13,10 @@ import { RegistroComponent } from './registro/registro.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductComponent } from './product/product.component';
-import { FormsModule } from '@angular/forms'; // Importar FormsModule
+import { FormsModule } from '@angular/forms';
+import { PreguntasComponent } from './preguntas/preguntas.component';
+import { PoliticasComponent } from './politicas/politicas.component';
+import { AvisosComponent } from './avisos/avisos.component'; // Importar FormsModule
 
 @NgModule({
   declarations: [
@@ -26,6 +29,9 @@ import { FormsModule } from '@angular/forms'; // Importar FormsModule
     LoginComponent,
     RegistroComponent,
     ProductComponent,
+    PreguntasComponent,
+    PoliticasComponent,
+    AvisosComponent,
 
   ],
   imports: [
