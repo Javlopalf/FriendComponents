@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { CategoriasService } from '../servicios/categorias-service.service';  // Asegúrate de que la ruta es correcta
+import { CategoriasService } from '../servicios/categorias-service.service';
 
 @Component({
   selector: 'app-inicio',
@@ -9,19 +9,20 @@ import { CategoriasService } from '../servicios/categorias-service.service';  //
 })
 export class InicioComponent implements OnInit {
 
-  categorias: any[] = [];  // Arreglo para almacenar las categorías desde la base de datos
+  categorias: any[] = [];
+  mostrarModal: boolean = false;
 
   constructor(private router: Router, private categoriasService: CategoriasService) {}
 
   ngOnInit(): void {
-    this.obtenerCategorias();  // Llamar al método para obtener las categorías
+    this.obtenerCategorias();
+    this.verificarCookies();
   }
 
-  // Método para obtener las categorías
   obtenerCategorias(): void {
     this.categoriasService.getCategorias().subscribe(
       (data) => {
-        this.categorias = data;  // Asegúrate de que la estructura de datos sea correcta
+        this.categorias = data;
       },
       (error) => {
         console.error('Error al obtener las categorías', error);
@@ -30,7 +31,29 @@ export class InicioComponent implements OnInit {
   }
 
   seleccionarCategoria(categoriaId: number): void {
-    // Redirige al componente Productos pasando la categoría como parámetro
     this.router.navigate(['../productos', categoriaId]);
+  }
+
+  verificarCookies(): void {
+    const cookiesAceptadas = localStorage.getItem('cookiesAceptadas');
+    if (!cookiesAceptadas) {
+      this.mostrarModal = true;
+    }
+  }
+
+  aceptarCookies(): void {
+    localStorage.setItem('cookiesAceptadas', 'true');
+    this.mostrarModal = false;
+  }
+
+  rechazarCookies(): void {
+    localStorage.removeItem('cookiesAceptadas');
+    this.mostrarModal = false;
+    this.logout();
+  }
+
+  logout(): void {
+    localStorage.removeItem('usuario'); // Borra los datos de usuario
+    this.router.navigate(['/login']); // Redirige a la pantalla de login
   }
 }

@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Meta, Title } from '@angular/platform-browser';
+import { Router } from '@angular/router'; // Importar el servicio Router
+
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
@@ -12,12 +14,10 @@ export class RegistroComponent {
   submitted = false;
   private apiUrl = 'http://localhost/FriendComponents/controller/UsuarioController.php'; // URL del backend
 
+  constructor(private formBuilder: FormBuilder, private http: HttpClient, private meta: Meta, 
+              private title: Title, private router: Router) { // Inyectamos el Router
 
-  //Validador de Formulario
-  constructor(private formBuilder: FormBuilder, private http: HttpClient,private meta: Meta, 
-    private title: Title,) {
-    //Meta y título
-    this.title.setTitle('Registo');
+    this.title.setTitle('Registro');
     this.meta.updateTag({ name: 'description', content: 'Página de registro de usuarios' });
     this.meta.updateTag({ name: 'keywords', content: 'Registro de usuarios' });
 
@@ -32,7 +32,7 @@ export class RegistroComponent {
       confirmPassword: ['', [
         Validators.required,
         Validators.minLength(6),
-        Validators.pattern(/^(?=.*[A-Z])(?=.*\d).*$/) ]]
+        Validators.pattern(/^(?=.*[A-Z])(?=.*\d).*$/)]]
     }, {
       validator: this.matchPasswords('password', 'confirmPassword') // Validador personalizado
     });
@@ -55,35 +55,39 @@ export class RegistroComponent {
     };
   }
 
-  //Al completar el formulario indica al usuario si esta bien cumplimentada la informacion  
-    onSubmit() {
-      this.submitted = true;
-  
-      if (this.registerForm.invalid) {
-        return;
+  // Al completar el formulario indica al usuario si está bien cumplimentada la información  
+  onSubmit() {
+    this.submitted = true;
+
+    if (this.registerForm.invalid) {
+      return;
+    }
+
+    const formData = {
+      nombre: this.registerForm.value.name,
+      correo: this.registerForm.value.email,
+      contrasenia: this.registerForm.value.password
+    };
+
+    this.http.post(this.apiUrl, formData).subscribe({
+      next: (response) => {
+        console.log('Usuario registrado:', response);
+        alert('Usuario registrado correctamente.');
+
+        // Redirigir al login después del registro exitoso
+        this.router.navigate(['/login']); // Redirige a la página de login
+
+        this.registerForm.reset();
+        this.submitted = false;
+      },
+      error: (error) => {
+        console.error('Error al registrar usuario:', error);
+        alert('Hubo un error al registrar el usuario.');
       }
-  
-      const formData = {
-        nombre: this.registerForm.value.name,
-        correo: this.registerForm.value.email,
-        contrasenia: this.registerForm.value.password
-      };
-  
-      this.http.post(this.apiUrl, formData).subscribe({
-        next: (response) => {
-          console.log('Usuario registrado:', response);
-          alert('Usuario registrado correctamente.');
-          this.registerForm.reset();
-          this.submitted = false;
-        },
-        error: (error) => {
-          console.error('Error al registrar usuario:', error);
-          alert('Hubo un error al registrar el usuario.');
-        }
-      });
-    }
-  
-    get f() {
-      return this.registerForm.controls;
-    }
+    });
+  }
+
+  get f() {
+    return this.registerForm.controls;
+  }
 }

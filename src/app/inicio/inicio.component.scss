@@ -143,6 +143,56 @@ $fuente: Verdana, Geneva, Tahoma, sans-serif;
   color: inherit;
 }
 
+.cookie-modal {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 80%;
+  max-width: 400px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+
+  .cookie-content {
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 15px;
+    }
+
+    .cookie-buttons {
+      display: flex;
+      justify-content: space-between;
+
+      button {
+        background: #ff8c00;
+        border: none;
+        padding: 10px 20px;
+        color: white;
+        font-size: 1rem;
+        cursor: pointer;
+        border-radius: 5px;
+        margin: 5px;
+      }
+
+      button:last-child {
+        background: red;
+      }
+    }
+  }
+}
+
+
+
 @media (max-width: 1200px) {
   .categorias-container {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -161,5 +211,26 @@ $fuente: Verdana, Geneva, Tahoma, sans-serif;
   .categorias-container {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 0.5rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .titulo {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.5rem;
+    color: #2F1893;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .seccion-titulo{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.5rem;
+    color: #2F1893;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-weight: bold;
   }
 }

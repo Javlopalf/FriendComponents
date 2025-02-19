@@ -32,8 +32,7 @@ export class CarritoComponent implements OnInit {
   // Cargar productos del carrito desde el backend
   cargarCarrito() {
     this.carritoService.obtenerCarrito(this.usuarioId).subscribe(
-      (data) => {
-        console.log("Datos recibidos del carrito:", data); // Depuración
+      (data) => {        
         if (data.length > 0 && data[0].carrito_id) {
           this.carritoId = data[0].carrito_id; // Asigna el ID del carrito
         }
@@ -63,8 +62,7 @@ export class CarritoComponent implements OnInit {
     const producto = this.carrito[index];
     producto.cantidad++;
     this.carritoService.actualizarCantidad(this.usuarioId, producto.id, producto.cantidad).subscribe(
-      () => {
-        console.log('Cantidad actualizada a', producto.cantidad);
+      () => {        
         this.actualizarContador();
       },
       (error) => console.error('Error al actualizar la cantidad del producto', error)
@@ -77,8 +75,7 @@ export class CarritoComponent implements OnInit {
     if (producto.cantidad > 1) {
       producto.cantidad--;
       this.carritoService.actualizarCantidad(this.usuarioId, producto.id, producto.cantidad).subscribe(
-        () => {
-          console.log('Cantidad actualizada a', producto.cantidad);
+        () => {          
           this.actualizarContador();
         },
         (error) => console.error('Error al actualizar la cantidad del producto', error)
@@ -86,8 +83,7 @@ export class CarritoComponent implements OnInit {
     } else if (producto.cantidad === 1) {
       // Si la cantidad es 1, al quitar se establece a 0, eliminando el producto
       this.carritoService.actualizarCantidad(this.usuarioId, producto.id, 0).subscribe(
-        (response) => {
-          console.log("Producto eliminado por tener 0 cantidad", response);
+        (response) => {        
           // Eliminar el producto del arreglo local
           this.carrito.splice(index, 1);
           this.actualizarContador();
@@ -104,8 +100,7 @@ export class CarritoComponent implements OnInit {
     const producto = this.carrito[i];
     if (this.usuarioId && producto && producto.id) {
       this.carritoService.eliminarDelCarrito(this.usuarioId, producto.id).subscribe(
-        (response) => {
-          console.log('Producto eliminado correctamente', response);
+        (response) => {          
           this.carrito.splice(i, 1);
           this.actualizarContador();
         },

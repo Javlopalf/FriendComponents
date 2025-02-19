@@ -21,8 +21,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     // Suscribirse al BehaviorSubject para actualizar el contador en tiempo real
-    this.cartCountService.cartCount$.subscribe(count => {
-      console.log('Cart count actualizado:', count);
+    this.cartCountService.cartCount$.subscribe(count => {      
       this.cartCount = count;
     });
   
@@ -43,11 +42,9 @@ export class HeaderComponent implements OnInit {
     }
   }
   
-  cargarCantidadCarrito(userId: number) {
-    console.log('Cargando cantidad de carrito para usuario:', userId);
+  cargarCantidadCarrito(userId: number) {    
     this.cartCountService.obtenerCantidadCarrito(userId).subscribe(
-      (cantidad) => {
-        console.log('Cantidad recibida del backend:', cantidad);
+      (cantidad) => {        
         this.cartCountService.updateCartCount(cantidad);
       },
       (error) => console.error('Error al cargar la cantidad del carrito', error)
