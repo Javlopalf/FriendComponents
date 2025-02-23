@@ -128,33 +128,25 @@ export class CarritoComponent implements OnInit {
 
   // Realizar pedido (simulación)
   realizarPedido() {
-    // Obtener el correo del usuario desde el backend
-    this.http.post<{ email: string }>(`http://localhost:3000/get-user-email`, { userId: this.usuarioId }).subscribe(
+    const subject = 'Confirmación de Pedido';
+    const body = `
+      <h3>¡Gracias por tu compra!</h3>
+      <p>Tu pedido ha sido realizado con éxito.</p>
+      <p>Total pagado: <strong>${this.getTotal().toFixed(2)} €</strong></p>
+      <p>Resumen del pedido:</p>
+      <ul>
+        ${this.carrito.map(item => `<li>${item.nombre} - ${item.cantidad} x ${item.precio} €</li>`).join('')}
+      </ul>
+    `;
+
+    this.emailService.sendEmail(subject, body).subscribe(
       response => {
-        const userEmail = response.email;
-
-        if (!userEmail) {
-          alert('No se encontró el correo del usuario');
-          return;
-        }
-
-        const subject = 'Confirmación de Pedido';
-        const body = `Hola, tu pedido ha sido realizado con éxito.`;
-
-        this.emailService.sendEmail(userEmail, subject, body).subscribe(
-          response => {
-            alert('Pedido realizado con éxito y correo enviado');
-            console.log('Correo enviado:', response);
-          },
-          error => {
-            alert('Error al enviar el correo');
-            console.error('Error al enviar el correo:', error);
-          }
-        );
+        alert('Pedido realizado con éxito y correo enviado');
+        console.log('Correo enviado:', response);
       },
       error => {
-        alert('Error al obtener el correo del usuario');
-        console.error('Error al obtener el correo del usuario:', error);
+        alert('Error al enviar el correo');
+        console.error('Error al enviar el correo:', error);
       }
     );
   }

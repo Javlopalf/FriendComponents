@@ -1,4 +1,3 @@
-// email.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -11,8 +10,8 @@ export class EmailService {
 
   constructor(private http: HttpClient) { }
 
-  sendEmail(email: string, subject: string, body: string): Observable<any> {
-    const data = { email, subject, body };
+  sendEmail(subject: string, body: string): Observable<any> {
+    const data = { subject, body }; // Eliminado el parámetro 'email'
     return this.http.post<any>(this.apiUrl, data);
   }
 }
