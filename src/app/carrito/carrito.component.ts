@@ -143,10 +143,6 @@ export class CarritoComponent implements OnInit {
       response => {
         alert('Pedido realizado con éxito y correo enviado');
         console.log('Correo enviado:', response);
-      },
-      error => {
-        alert('Error al enviar el correo');
-        console.error('Error al enviar el correo:', error);
       }
     );
   }
