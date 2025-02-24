@@ -118,6 +118,31 @@ export class CarritoComponent implements OnInit {
 
   // Realizar pedido (simulación)
   realizarPedido() {
-    alert('Pedido realizado con éxito');
+    
+    const usuario = JSON.parse(localStorage.getItem('user') || '{}');
+    if (!usuario.correo) {
+      console.error('El usuario no tiene un email registrado');
+      return;
+    }
+    
+    const pedido = {
+      email: usuario.correo,
+      productos: this.carrito,
+      total: this.getTotal()
+    };
+  
+    // Enviar datos al backend
+    fetch('http://localhost/FriendComponents/controller/sendMail.php', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(pedido)
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+      alert('Pedido realizado con éxito. Se ha enviado un correo de confirmación.');
+    })
+    .catch(error => console.error('Error al enviar el correo:', error));
   }
+  
 }
