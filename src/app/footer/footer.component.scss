@@ -57,4 +57,10 @@ $text-color-secondary: rgba(255, 255, 255, 0.7);
       width: 100px;
     }
   }
+
+  .social-icons img {
+    width: 40px;  /* Tamaño deseado */
+    height: auto; /* Mantener la proporción original */
+    margin: 0 10px; /* Espaciado entre los íconos */
+  }
 }
